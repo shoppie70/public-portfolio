@@ -1,0 +1,59 @@
+.hero {
+    @apply flex items-center justify-center text-center min-h-screen bg-cover bg-center bg-no-repeat relative;
+}
+
+.hero::after {
+    @apply block absolute top-0 right-0 w-full h-screen;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: radial-gradient(#333 30%, transparent 31%), radial-gradient(#333 30%, transparent 31%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+}
+
+body {
+    background-color: #1c1d20;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.job-title {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.profile-name-line {
+    height: 1px;
+    width: 70px;
+    background-color: white;
+}
+
+.title {
+
+    span {
+        display: block;
+        transform: translate(0, 105%);
+        transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+    }
+
+    &.-visible span {
+        transform: translate(0, 0);
+    }
+
+    @for $i from 2 through 14 {
+        span:nth-child(#{$i}) {
+            transition-delay: 0.06s * $i;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
