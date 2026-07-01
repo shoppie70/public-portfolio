@@ -1,0 +1,151 @@
+:root {
+    --color-primary: #18181b;
+    --color-secondary: #3f3f46;
+    --color-accent: #2563eb;
+    --color-bg-dark: #09090b;
+    --color-bg-card: #18181b;
+    --color-text-bright: #f4f4f5;
+    --color-text-muted: #a1a1aa;
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-bright);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+    background: rgba(9, 9, 11, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Interactive Card hover effects */
+.premium-card {
+    background-color: var(--color-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.15);
+}
+
+/* Custom Timeline styling */
+.timeline-border {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* About section specific font utilities */
+.font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.font-sans-tech {
+    font-family: 'IBM Plex Sans', 'sans-serif';
+}
+
+/* =====================
+   BENTO GRID & SKILLS
+ ===================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+}
+
+.bento-card {
+    background: #18181b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.bento-card:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    background: #202024;
+    transform: translateY(-2px);
+}
+
+.bento-card.span-6 {
+    grid-column: span 6;
+}
+
+.bento-card.span-12 {
+    grid-column: span 12;
+}
+
+@media (max-width: 1024px) {
+    .bento-card.span-6 {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-card {
+        padding: 20px;
+    }
+}
+
+.skill-row {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.skill-row:last-child {
+    border-bottom: none;
+}
+
+.surface-card {
+    background: #18181b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.surface-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: #202024;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "sho-tsukamoto.jp",
+  "version": "1.0.0",
+  "description": "幼少期からコンピュータや工学に興味があり、パソコンを触っているのが大好きです。 なかでも、Web系が好物でphpを愛しています。 Laravelを用いたシステム開発を得意としています。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "alpinejs": "^3.15.12",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
+    "sass": "^1.101.0",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.1.2"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^1.18.1",
+    "lodash": "^4.18.1",
+    "swiper": "^14.0.1"
+  }
+}
