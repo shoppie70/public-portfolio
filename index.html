@@ -721,7 +721,7 @@
             </section>
 
             <!-- WORKS SECTION -->
-            <section id="works" class="px-4 py-20 bg-zinc-950 md:px-0 md:py-32">
+            <section id="works" class="px-4 py-20 bg-zinc-950 md:px-0 md:py-32" x-data="{ activeProject: null }">
                 <div class="mx-auto w-full max-w-screen-lg">
                     <div class="mb-16">
                         <div class="wow animate__ animate__fadeInUp animated"
@@ -738,7 +738,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'instagram-generator'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/instagram.jpg" alt="Instagram Graph API Token Generator">
@@ -754,70 +754,6 @@
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Web
                                         Tool / API</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    Instagram Graph API Token Generator
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://instagram.salvador79.dev/" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 サイトにアクセスする <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        インスタグラムの投稿をWebページに埋め込む際、Instagram Graph
-                                                        APIを利用してトークンを発行する必要があります。
-                                                    </p>
-                                                    <p>
-                                                        手動でのトークン発行手順が煩雑なため、自動取得・更新ができるツールを個人で構築し、運用しています。
-                                                    </p>
-                                                    <p>
-                                                        現在、日本国内のみならず世界中の方々から毎日のように利用されており、個人開発ツールとして稼働しています。
-                                                    </p>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">GitHub Repository</p>
-                                                        <a class="text-blue-400 hover:underline text-xs"
-                                                            href="https://github.com/shoppie70/InstagramGraphApiTokenGenerator"
-                                                            target="_blank" rel="noopener">
-                                                            https://github.com/shoppie70/InstagramGraphApiTokenGenerator
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/instagram_site.jpg"
-                                                    alt="Instagram Graph API Token Generator Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -825,7 +761,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'himaken'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/himaken.jpg" alt="ひまわり建宅">
@@ -841,60 +777,6 @@
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">WordPress
                                         / Sage 10</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    有限会社ひまわり建宅 公式サイト
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://himaken.co.jp/" target="_blank" rel="noopener">
-                                                        🔗 サイトにアクセスする <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        岡山市北区の不動産会社、有限会社ひまわり建宅様のコーポレートサイト。副業案件として、お客様との打ち合わせ、要件定義、データベース設計、フロントエンド＆バックエンド実装まで一気通貫で対応しました。
-                                                    </p>
-                                                    <p>
-                                                        WordPressのモダンなテーマ開発ツールである「Sage 10」を使用し、MVC設計に基づいた綺麗なテンプレート構築を実現。
-                                                    </p>
-                                                    <p>
-                                                        Viewの実装にはTailwind CSSを使用し、高速かつ将来の仕様変更にも柔軟に対応できるマークアップを行っています。
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/himaken.jpg"
-                                                    alt="ひまわり建宅 Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -902,7 +784,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'maedahai'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/maedahai.jpg" alt="前田杯">
@@ -917,72 +799,6 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    前田杯 釣り大会システム
-                                                </h3>
-                                                <div class="mb-4 flex flex-wrap gap-2 text-xs">
-                                                    <a class="text-blue-400 hover:underline font-semibold inline-flex items-center"
-                                                        href="https://fishing.salvador79.dev/"
-                                                        target="_blank" rel="noopener">
-                                                        🔗 応募システム <span class="ml-1">→</span>
-                                                    </a>
-                                                    <span class="text-zinc-600">|</span>
-                                                    <a class="text-blue-400 hover:underline font-semibold inline-flex items-center"
-                                                        href="https://staging.maeda-hai.com/"
-                                                        target="_blank" rel="noopener">
-                                                        🔗 大会公式(構築中) <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        有志で企画・運営している釣り大会の公式サイトおよび応募エントリー管理システムです。
-                                                    </p>
-                                                    <p>
-                                                        バックエンドおよび応募受付のロジックはLaravelを用いて構築。管理画面からエントリーした応募者のステータス確認、名簿作成などがスムーズに行える設計にしています。
-                                                    </p>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">GitHub Repository</p>
-                                                        <a class="text-blue-400 hover:underline text-xs"
-                                                            href="https://github.com/shoppie70/FishingTournamentEntryForm"
-                                                            target="_blank" rel="noopener">
-                                                            https://github.com/shoppie70/FishingTournamentEntryForm
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/maedahai.jpg"
-                                                    alt="前田杯 Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -990,7 +806,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'zukimemo'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/zukimemo.jpg" alt="ずきメモ">
@@ -1005,84 +821,6 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発 / プレ PWA アプリ</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
-                                                    頭痛管理Webアプリ「ずきメモ」
-                                                </h3>
-                                                <p class="text-blue-400 text-sm font-semibold mb-4 italic">「痛すぎて滅、治したくて記録。」</p>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://zukimemo.sho-tsukamoto.jp" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 サイトにアクセスする <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact Nativeへの移行を視野に入れた設計）。
-                                                    </p>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>バグゼロの追求とUXの両立:</strong> 頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。</li>
-                                                            <li><strong>実用的な共有機能:</strong> ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>Inertia.jsによるモダンモノリス:</strong> APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。</li>
-                                                            <li><strong>厳格なDBリレーション設計:</strong> <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。</li>
-                                                            <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="tag">PHP 8.4</span>
-                                                            <span class="tag">Laravel 12</span>
-                                                            <span class="tag">React</span>
-                                                            <span class="tag">Inertia.js</span>
-                                                            <span class="tag">Tailwind CSS</span>
-                                                            <span class="tag">shadcn/ui</span>
-                                                            <span class="tag">MySQL</span>
-                                                            <span class="tag">Docker</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/zukimemo.jpg"
-                                                    alt="ずきメモ Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -1090,7 +828,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'shioyomi'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/shioyomi.jpg" alt="シオヨミ">
@@ -1105,81 +843,6 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    潮見表ツール「シオヨミ」
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 サイトにアクセスする <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        自身がよく行く兵庫・鳥取・島根・岡山・香川などの主要な港（20箇所）の『潮汐・天気・風速』を、複数サイトを行き来することなく1画面で瞬時に把握するために開発した釣行計画立案ツール。
-                                                    </p>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>釣果に直結するデータの統合可視化:</strong> 24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong> あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を <code>Requests</code> / <code>Services</code> / <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。</li>
-                                                            <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code> から潮汐データを、<code>Open-Meteo</code> から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
-                                                            <li><strong>ポータブルな開発環境:</strong> Apache + PHP 8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="tag">PHP 8.0</span>
-                                                            <span class="tag">Composer</span>
-                                                            <span class="tag">nesbot/carbon</span>
-                                                            <span class="tag">Chart.js 2.7</span>
-                                                            <span class="tag">Tailwind CSS</span>
-                                                            <span class="tag">Docker</span>
-                                                            <span class="tag">Xserver</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/shioyomi.jpg"
-                                                    alt="シオヨミ Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -1187,7 +850,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'spacing-quicklook'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/tailwind_spacing_ext.jpg" alt="Tailwind CSS Spacing Size QuickLook">
@@ -1202,75 +865,6 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">OSS / 開発者ツール</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    Tailwind CSS Spacing Size QuickLook
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 Chrome ウェブストア <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        Tailwind CSSで使えるピクセルサイズを早見して、クリップボードにコピーすることが可能です。
-                                                    </p>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>開発時の脳内変換コストの削減:</strong> 実務におけるコーディング時、<code>mb-64</code> 等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>超軽量・ノーライブラリ実装:</strong> ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="tag">JavaScript (Vanilla JS)</span>
-                                                            <span class="tag">Chrome Extensions API</span>
-                                                            <span class="tag">Tailwind CSS</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/tailwind_spacing_ext.jpg"
-                                                    alt="Tailwind CSS Spacing Size QuickLook Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -1278,7 +872,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'fontsize-quicklook'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/tailwind_fontsize_ext.jpg" alt="Tailwind CSS Font Size QuickLook">
@@ -1293,75 +887,6 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">OSS / 開発者ツール</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    Tailwind CSS Font Size QuickLook
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://chromewebstore.google.com/detail/tailwind-css-font-size-qu/jdecefnmjmfbmcmpaboecebdlkpmkeel" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 Chrome ウェブストア <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        ポップアップでTailwindCSSのフォントサイズを確認することができます。
-                                                    </p>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>Typographyレイアウトの効率化:</strong> カンプ上の文字サイズ（ピクセル）と、Tailwindの <code>text-sm</code> / <code>text-xl</code> といった抽象化されたユーティリティクラス間のピクセル数・rem換算値を瞬時にクロスリファレンスするために開発。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>堅牢なブラウザ拡張アーキテクチャ:</strong> Chrome Extensions APIに準拠し、セキュアなコンテキストで軽量に動作する設計。直感的かつミニマルなポップアップUIを構築し、フロントエンドエンジニアの日常的なUI実装スピード向上に寄与。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="tag">JavaScript (Vanilla JS)</span>
-                                                            <span class="tag">Chrome Extensions API</span>
-                                                            <span class="tag">Tailwind CSS</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/tailwind_fontsize_ext.jpg"
-                                                    alt="Tailwind CSS Font Size QuickLook Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
 
@@ -1369,7 +894,7 @@
                         <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
                             <article
                                 class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                x-data="{ open: false }" @click="open = true">
+                                @click="activeProject = 'youtube-shopico'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         src="./assets/images/youtube_shopico.jpg" alt="高嶺のしょぴこさん♪">
@@ -1384,80 +909,477 @@
                                     <span
                                         class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">メディア運営 / データマーケティング</span>
                                 </div>
-
-                                <!-- Modal -->
-                                <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                                    style="display: none;" x-show="open" x-transition.opacity.duration.300ms>
-                                    <!-- Backdrop -->
-                                    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="open = false"></div>
-
-                                    <!-- Modal Content -->
-                                    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                        x-show="open" x-transition:enter="transition ease-out duration-300"
-                                        x-transition:enter-start="opacity-0 scale-95"
-                                        x-transition:enter-end="opacity-100 scale-100"
-                                        x-transition:leave="transition ease-in duration-200"
-                                        x-transition:leave-start="opacity-100 scale-100"
-                                        x-transition:leave-end="opacity-0 scale-95" @click.away="open = false">
-
-                                        <!-- Close Button -->
-                                        <button
-                                            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
-                                            @click="open = false">
-                                            ✕
-                                        </button>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-white mb-4 font-heading">
-                                                    YouTube「高嶺のしょぴこさん♪」運営
-                                                </h3>
-                                                <div class="mb-4">
-                                                    <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
-                                                        href="https://www.youtube.com/@shopico3" target="_blank"
-                                                        rel="noopener">
-                                                        🔗 チャンネルにアクセスする <span class="ml-1">→</span>
-                                                    </a>
-                                                </div>
-                                                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
-                                                    <p>
-                                                        感覚や運に頼る動画投稿ではなく、エンジニア的な定量的データ分析をYouTubeアルゴリズムに適用し、戦略的にグロースさせた釣魚特化型YouTubeメディア。
-                                                    </p>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>緻密なデータドリブンPDCA:</strong> インプレッションクリック率（CTR）、視聴維持率（リテンション）、トラフィックソース等のアナリティクスデータを日々トラッキングし、高速で仮説検証サイクル（PDCA）を回す仕組みを自走。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                                                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                            <li><strong>ニッチ市場のセグメンテーション:</strong> 『釣り』という巨大なレッドオーシャンの中で、地域や特定の釣法に特化したセグメントを定義。競合優位性の高いコンテンツポジションを戦略的に確立。</li>
-                                                            <li><strong>CTR/リテンションの最大化施策:</strong> クリック率向上のためのサムネイル（構図・配色）の比較検証、および視聴維持率を最大化するための動画構成のデータ最適化を徹底。結果として、<strong>チャンネル開設からわずか約半年でチャンネル登録者数1,000人を突破</strong>し、収益化要件を最速でクリア。ゼロからのメディア立ち上げ力とプロダクトグロース能力を実証。</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="pt-4 border-t border-zinc-800">
-                                                        <p class="text-xs text-zinc-400 mb-1">関連スキル</p>
-                                                        <div class="flex flex-wrap gap-1.5">
-                                                            <span class="tag">データアナリティクス</span>
-                                                            <span class="tag">マーケティング戦略</span>
-                                                            <span class="tag">SEO/アルゴリズム最適化</span>
-                                                            <span class="tag">動画編集/デザイン</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-xl overflow-hidden border border-zinc-800">
-                                                <img class="w-full object-cover"
-                                                    src="./assets/images/youtube_shopico.jpg"
-                                                    alt="高嶺のしょぴこさん♪ Screenshot">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </article>
                         </li>
                     </ul>
+
+                    <!-- Modals (Separated from list to avoid container overflow / transform side-effects) -->
+                    <div>
+                        <!-- Modal 1: Instagram Graph API Token Generator -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'instagram-generator'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'instagram-generator'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            Instagram Graph API Token Generator
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://instagram.salvador79.dev/" target="_blank" rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                インスタグラムの投稿をWebページに埋め込む際、Instagram Graph APIを利用してトークンを発行する必要があります。
+                                            </p>
+                                            <p>
+                                                手動でのトークン発行手順が煩雑なため、自動取得・更新ができるツールを個人で構築し、運用しています。
+                                            </p>
+                                            <p>
+                                                現在、日本国内のみならず世界中の方々から毎日のように利用されており、個人開発ツールとして稼働しています。
+                                            </p>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">GitHub Repository</p>
+                                                <a class="text-blue-400 hover:underline text-xs"
+                                                    href="https://github.com/shoppie70/InstagramGraphApiTokenGenerator"
+                                                    target="_blank" rel="noopener">
+                                                    https://github.com/shoppie70/InstagramGraphApiTokenGenerator
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/instagram_site.jpg"
+                                            alt="Instagram Graph API Token Generator Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 2: ひまわり建宅 -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'himaken'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'himaken'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            有限会社ひまわり建宅 公式サイト
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://himaken.co.jp/" target="_blank" rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                岡山市北区の不動産会社、有限会社ひまわり建宅様のコーポレートサイト。副業案件として、お客様との打ち合わせ、要件定義、データベース設計、フロントエンド＆バックエンド実装まで一気通貫で対応しました。
+                                            </p>
+                                            <p>
+                                                WordPressのモダンなテーマ開発ツールである「Sage 10」を使用し、MVC設計に基づいた綺麗なテンプレート構築を実現。
+                                            </p>
+                                            <p>
+                                                Viewの実装にはTailwind CSSを使用し、高速かつ将来の仕様変更にも柔軟に対応できるマークアップを行っています。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/himaken.jpg"
+                                            alt="ひまわり建宅 Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 3: 前田杯 -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'maedahai'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'maedahai'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            前田杯 釣り大会システム
+                                        </h3>
+                                        <div class="mb-4 flex flex-wrap gap-2 text-xs">
+                                            <a class="text-blue-400 hover:underline font-semibold inline-flex items-center"
+                                                href="https://fishing.salvador79.dev/" target="_blank" rel="noopener">
+                                                🔗 応募システム <span class="ml-1">→</span>
+                                            </a>
+                                            <span class="text-zinc-600">|</span>
+                                            <a class="text-blue-400 hover:underline font-semibold inline-flex items-center"
+                                                href="https://staging.maeda-hai.com/" target="_blank" rel="noopener">
+                                                🔗 大会公式(構築中) <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                有志で企画・運営している釣り大会の公式サイトおよび応募エントリー管理システムです。
+                                            </p>
+                                            <p>
+                                                バックエンドおよび応募受付のロジックはLaravelを用いて構築。管理画面からエントリーした応募者のステータス確認、名簿作成などがスムーズに行える設計にしています。
+                                            </p>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">GitHub Repository</p>
+                                                <a class="text-blue-400 hover:underline text-xs"
+                                                    href="https://github.com/shoppie70/FishingTournamentEntryForm"
+                                                    target="_blank" rel="noopener">
+                                                    https://github.com/shoppie70/FishingTournamentEntryForm
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/maedahai.jpg"
+                                            alt="前田杯 Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 4: ずきメモ -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'zukimemo'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'zukimemo'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                                            頭痛管理Webアプリ「ずきメモ」
+                                        </h3>
+                                        <p class="text-blue-400 text-sm font-semibold mb-4 italic">「痛すぎて滅、治したくて記録。」</p>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://zukimemo.sho-tsukamoto.jp" target="_blank" rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact Nativeへの移行を視野に入れた設計）。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>バグゼロの追求とUXの両立:</strong> 頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。</li>
+                                                    <li><strong>実用的な共有機能:</strong> ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>Inertia.jsによるモダンモノリス:</strong> APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。</li>
+                                                    <li><strong>厳格なDBリレーション設計:</strong> <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。</li>
+                                                    <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">PHP 8.4</span>
+                                                    <span class="tag">Laravel 12</span>
+                                                    <span class="tag">React</span>
+                                                    <span class="tag">Inertia.js</span>
+                                                    <span class="tag">Tailwind CSS</span>
+                                                    <span class="tag">shadcn/ui</span>
+                                                    <span class="tag">MySQL</span>
+                                                    <span class="tag">Docker</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/zukimemo.jpg"
+                                            alt="ずきメモ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 5: シオヨミ -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'shioyomi'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'shioyomi'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            潮見表ツール「シオヨミ」
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank" rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                自身がよく行く兵庫・鳥取・島根・岡山・香川などの主要な港（20箇所）の『潮汐・天気・風速』を、複数サイトを行き来することなく1画面で瞬時に把握するために開発した釣行計画立案ツール。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>釣果に直結するデータの統合可視化:</strong> 24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong> あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を <code>Requests</code> / <code>Services</code> / <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。</li>
+                                                    <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code> から潮汐データを、<code>Open-Meteo</code> から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
+                                                    <li><strong>ポータブルな開発環境:</strong> Apache + PHP 8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">PHP 8.0</span>
+                                                    <span class="tag">Composer</span>
+                                                    <span class="tag">nesbot/carbon</span>
+                                                    <span class="tag">Chart.js 2.7</span>
+                                                    <span class="tag">Tailwind CSS</span>
+                                                    <span class="tag">Docker</span>
+                                                    <span class="tag">Xserver</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/shioyomi.jpg"
+                                            alt="シオヨミ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 6: Spacing Size QuickLook -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'spacing-quicklook'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'spacing-quicklook'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            Tailwind CSS Spacing Size QuickLook
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln" target="_blank" rel="noopener">
+                                                🔗 Chrome ウェブストア <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                Tailwind CSSで使えるピクセルサイズを早見して、クリップボードにコピーすることが可能です。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>開発時の脳内変換コストの削減:</strong> 実務におけるコーディング時、<code>mb-64</code> 等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>超軽量・ノーライブラリ実装:</strong> ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">JavaScript (Vanilla JS)</span>
+                                                    <span class="tag">Chrome Extensions API</span>
+                                                    <span class="tag">Tailwind CSS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/tailwind_spacing_ext.jpg"
+                                            alt="Tailwind CSS Spacing Size QuickLook Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 7: Font Size QuickLook -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'fontsize-quicklook'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'fontsize-quicklook'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            Tailwind CSS Font Size QuickLook
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://chromewebstore.google.com/detail/tailwind-css-font-size-qu/jdecefnmjmfbmcmpaboecebdlkpmkeel" target="_blank" rel="noopener">
+                                                🔗 Chrome ウェブストア <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                ポップアップでTailwindCSSのフォントサイズを確認することができます。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>Typographyレイアウトの効率化:</strong> カンプ上の文字サイズ（ピクセル）と、Tailwindの <code>text-sm</code> / <code>text-xl</code> といった抽象化されたユーティリティクラス間のピクセル数・rem換算値を瞬時にクロスリファレンスするために開発。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>堅牢なブラウザ拡張アーキテクチャ:</strong> Chrome Extensions APIに準拠し、セキュアなコンテキストで軽量に動作する設計。直感的かつミニマルなポップアップUIを構築し、フロントエンドエンジニアの日常的なUI実装スピード向上に寄与。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">JavaScript (Vanilla JS)</span>
+                                                    <span class="tag">Chrome Extensions API</span>
+                                                    <span class="tag">Tailwind CSS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/tailwind_fontsize_ext.jpg"
+                                            alt="Tailwind CSS Font Size QuickLook Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal 8: YouTube Channel -->
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            style="display: none;" x-show="activeProject === 'youtube-shopico'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'youtube-shopico'" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                            YouTube「高嶺のしょぴこさん♪」運営
+                                        </h3>
+                                        <div class="mb-4">
+                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                                href="https://www.youtube.com/@shopico3" target="_blank" rel="noopener">
+                                                🔗 チャンネルにアクセスする <span class="ml-1">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                感覚や運に頼る動画投稿ではなく、エンジニア的な定量的データ分析をYouTubeアルゴリズムに適用し、戦略的にグロースさせた釣魚特化型YouTubeメディア。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>緻密なデータドリブンPDCA:</strong> インプレッションクリック率（CTR）、視聴維持率（リテンション）、トラフィックソース等のアナリティクスデータを日々トラッキングし、高速で仮説検証サイクル（PDCA）を回す仕組みを自走。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>ニッチ市場 of セグメンテーション:</strong> 『釣り』という巨大なレッドオーシャンの中で、地域や特定の釣法に特化したセグメントを定義。競合優位性の高いコンテンツポジションを戦略的に確立。</li>
+                                                    <li><strong>CTR/リテンションの最大化施策:</strong> クリック率向上のためのサムネイル（構図・配色）の比較検証、および視聴維持率を最大化するための動画構成のデータ最適化を徹底。結果として、<strong>チャンネル開設からわずか約半年でチャンネル登録者数1,000人を突破</strong>し、収益化要件を最速でクリア。ゼロからのメディア立ち上げ力とプロダクトグロース能力を実証。</li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">関連スキル</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">データアナリティクス</span>
+                                                    <span class="tag">マーケティング戦略</span>
+                                                    <span class="tag">SEO/アルゴリズム最適化</span>
+                                                    <span class="tag">動画編集/デザイン</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                        <img class="w-full object-cover"
+                                            src="./assets/images/youtube_shopico.jpg"
+                                            alt="高嶺のしょぴこさん♪ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
