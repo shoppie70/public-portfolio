@@ -7,8 +7,18 @@
 ---
 
 **Project:** Sho Tsukamoto Portfolio
-**Generated:** 2026-06-30 20:03:28
-**Category:** Developer Tool / IDE
+**Updated:** 2026-06-30
+**Design Direction:** Apple-inspired — Dark, Minimal, Refined
+
+---
+
+## Global Design Philosophy
+
+Apple.comに倣い、以下を基本原則とする：
+- **余白を恐れない** — 大きなホワイトスペースが品質の証
+- **タイポグラフィで語る** — 装飾より文字の力で訴える
+- **モノクロベース + 単色アクセント** — 散漫にならない
+- **トランジションは控えめに** — 動きは意味を持つときのみ
 
 ---
 
@@ -18,186 +28,244 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#18181B` | `--color-primary` |
-| Secondary | `#3F3F46` | `--color-secondary` |
-| CTA/Accent | `#2563EB` | `--color-cta` |
-| Background | `#FAFAFA` | `--color-background` |
-| Text | `#09090B` | `--color-text` |
+| Background | `#000000` | `--color-bg` |
+| Surface | `#111111` | `--color-surface` |
+| Surface 2 | `#1a1a1a` | `--color-surface-2` |
+| Border | `rgba(255,255,255,0.08)` | `--color-border` |
+| Border Hover | `rgba(255,255,255,0.15)` | `--color-border-hover` |
+| Text Primary | `#f5f5f7` | `--color-text` |
+| Text Secondary | `#a1a1a6` | `--color-text-secondary` |
+| Text Tertiary | `#6e6e73` | `--color-text-tertiary` |
+| Accent (Blue) | `#2997ff` | `--color-accent` |
+| Accent Glow | `rgba(41,151,255,0.15)` | `--color-accent-glow` |
 
-**Color Notes:** Monochrome + blue accent
+**Color Notes:** Apple.comのダークデザイン準拠。#000黒背景 + #2997ffアップルブルー。
 
 ### Typography
 
-- **Heading Font:** Archivo
-- **Body Font:** Space Grotesk
-- **Mood:** minimal, portfolio, designer, creative, clean, artistic
-- **Google Fonts:** [Archivo + Space Grotesk](https://fonts.google.com/share?selection.family=Archivo:wght@300;400;500;600;700|Space+Grotesk:wght@300;400;500;600;700)
+- **Heading Font:** Inter (wght: 300–900)
+- **Mono Font:** JetBrains Mono (wght: 400–600)
+- **Mood:** Apple, premium, minimal, clean, precise
+- **Google Fonts:** Inter + JetBrains Mono
 
 **CSS Import:**
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+```
+
+**Typography Scale:**
+```css
+.headline-giant  { font-size: clamp(3rem, 10vw, 8rem); font-weight: 700; letter-spacing: -0.03em; }
+.headline-large  { font-size: clamp(2rem, 5vw, 4rem);  font-weight: 700; letter-spacing: -0.025em; }
+.headline-medium { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; }
+.section-label   { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #2997ff; }
 ```
 
 ### Spacing Variables
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--space-xs` | `4px` / `0.25rem` | Tight gaps |
-| `--space-sm` | `8px` / `0.5rem` | Icon gaps, inline spacing |
-| `--space-md` | `16px` / `1rem` | Standard padding |
-| `--space-lg` | `24px` / `1.5rem` | Section padding |
-| `--space-xl` | `32px` / `2rem` | Large gaps |
-| `--space-2xl` | `48px` / `3rem` | Section margins |
-| `--space-3xl` | `64px` / `4rem` | Hero padding |
-
-### Shadow Depths
-
-| Level | Value | Usage |
-|-------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | Subtle lift |
-| `--shadow-md` | `0 4px 6px rgba(0,0,0,0.1)` | Cards, buttons |
-| `--shadow-lg` | `0 10px 15px rgba(0,0,0,0.1)` | Modals, dropdowns |
-| `--shadow-xl` | `0 20px 25px rgba(0,0,0,0.15)` | Hero images, featured cards |
+| Section Padding | `py-24 md:py-32` | 全セクション統一 |
+| Card Padding | `p-6 md:p-8` | カード内部 |
+| Gap | `gap-5` or `gap-6` | グリッドギャップ |
+| Container | `max-w-screen-lg mx-auto` | コンテンツ幅 |
 
 ---
 
 ## Component Specs
 
+### Navigation
+
+```css
+.nav-glass {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+```
+
+- Fixed top-3, 左右4px余白
+- リンクテキスト: `text-[#a1a1a6]` hover `text-white`
+- ブランドロゴ: `text-sm font-semibold tracking-widest`
+
 ### Buttons
 
 ```css
-/* Primary Button */
+/* Primary — Apple Blue */
 .btn-primary {
-  background: #2563EB;
-  color: white;
   padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
+  background: #2997ff;
+  color: #fff;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
+.btn-primary:hover { background: #409cff; }
 
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button */
+/* Secondary — Ghost */
 .btn-secondary {
-  background: transparent;
-  color: #18181B;
-  border: 2px solid #18181B;
   padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 200ms ease;
-  cursor: pointer;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 9999px;
+  color: #f5f5f7;
 }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
 ```
 
 ### Cards
 
 ```css
-.card {
-  background: #FAFAFA;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: var(--shadow-md);
-  transition: all 200ms ease;
-  cursor: pointer;
+.surface-card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  transition: border-color 0.3s ease;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-lg);
+.bento-card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px;
+  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bento-card:hover {
+  border-color: rgba(255,255,255,0.15);
   transform: translateY(-2px);
 }
 ```
 
-### Inputs
+### Tags / Badges
 
 ```css
-.input {
-  padding: 12px 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 200ms ease;
-}
-
-.input:focus {
-  border-color: #18181B;
-  outline: none;
-  box-shadow: 0 0 0 3px #18181B20;
+.tag {
+  background: rgba(41, 151, 255, 0.1);
+  color: #2997ff;
+  border: 1px solid rgba(41, 151, 255, 0.2);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 ```
 
-### Modals
+---
+
+## Layout System
+
+### Bento Grid
 
 ```css
-.modal-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
 }
+.bento-card.span-4  { grid-column: span 4; }
+.bento-card.span-6  { grid-column: span 6; }
+.bento-card.span-8  { grid-column: span 8; }
+.bento-card.span-12 { grid-column: span 12; }
 
-.modal {
-  background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-xl);
-  max-width: 500px;
-  width: 90%;
+@media (max-width: 1024px) {
+  .bento-card { grid-column: span 12; }
 }
 ```
+
+### Section Structure
+
+```
+Section Label (青 uppercase tracking)
+↓
+Headline (大きく、tight letter-spacing)
+↓
+Content (surface-card または bento-grid)
+```
+
+---
+
+## Animation & Motion
+
+```css
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* MUST HAVE */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+```
+
+- **Intersection Observer** でスクロールトリガー（WOW.jsは使わない）
+- アニメーション時間: 600-700ms cubic-bezier
+- Delay: `reveal-delay-1` 0.1s / `-2` 0.2s / `-3` 0.3s
 
 ---
 
 ## Style Guidelines
 
-**Style:** Vibrant & Block-based
+**Direction:** Apple-inspired Dark Minimal
 
-**Keywords:** Bold, energetic, playful, block layout, geometric shapes, high color contrast, duotone, modern, energetic
+**Keywords:** precision, restraint, negative space, clarity, premium
 
-**Best For:** Startups, creative agencies, gaming, social media, youth-focused, entertainment, consumer
+**Key Principles:**
+- セクション見出しは大型 (`clamp(2rem, 5vw, 4rem)`)
+- セクションラベルは `section-label` クラス（青 uppercase）
+- 背景の変化は使わない（すべて `#000` 統一）
+- `section-divider` で視覚的区切り
 
-**Key Effects:** Large sections (48px+ gaps), animated patterns, bold hover (color shift), scroll-snap, large type (32px+), 200-300ms
+### Page Structure
 
-### Page Pattern
-
-**Pattern Name:** Portfolio Grid
-
-- **Conversion Strategy:**  hover overlay info,  lightbox view, Visuals first. Filter by category. Fast loading essential.
-- **CTA Placement:** Project Card Hover + Footer Contact
-- **Section Order:** 1. Hero (Name/Role), 2. Project Grid (Masonry), 3. About/Philosophy, 4. Contact
+```
+1. Hero (フルビューポート、大型見出し)
+2. About (Core Value カード + プロフィール)
+3. Skills (Bento Grid)
+4. Certifications (リスト型カード)
+5. Experience (タイムライン)
+6. Works (3カラムグリッド + モーダル)
+7. Blog (3カラムグリッド)
+8. Footer (シンプル)
+```
 
 ---
 
 ## Anti-Patterns (Do NOT Use)
 
-- ❌ Flat design without depth
-- ❌ Text-heavy pages
+- ❌ 絵文字アイコン — SVGアイコンを使う（Heroicons系）
+- ❌ 不要な英語ラベル — ユーザーに無意味な英語は日本語化
+- ❌ セクション背景の色分け — `#000` 統一、`section-divider` で区切る
+- ❌ WOW.js / animate.css — Intersection Observer で実装
+- ❌ `transform: scale` のホバー — レイアウトシフトになるため `translateY(-2px)` を使う
+- ❌ 高速アニメーション — 最低 300ms、品質感のある動き
+- ❌ Flat design without depth — subtle borders and shadows
 
-### Additional Forbidden Patterns
+### Forbidden Patterns
 
-- ❌ **Emojis as icons** — Use SVG icons (Heroicons, Lucide, Simple Icons)
+- ❌ **Emojis as icons** — Use SVG icons (Heroicons)
 - ❌ **Missing cursor:pointer** — All clickable elements must have cursor:pointer
-- ❌ **Layout-shifting hovers** — Avoid scale transforms that shift layout
-- ❌ **Low contrast text** — Maintain 4.5:1 minimum contrast ratio
-- ❌ **Instant state changes** — Always use transitions (150-300ms)
-- ❌ **Invisible focus states** — Focus states must be visible for a11y
+- ❌ **Layout-shifting hovers** — Use translateY, not scale
+- ❌ **Low contrast text** — Maintain 4.5:1 minimum
+- ❌ **Instant state changes** — Always 150-300ms transitions
+- ❌ **Invisible focus states** — Focus states must be visible
 
 ---
 
 ## Pre-Delivery Checklist
 
-Before delivering any UI code, verify:
-
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
+- [ ] No emojis used as icons (use SVG)
+- [ ] All icons from Heroicons/Lucide
 - [ ] `cursor-pointer` on all clickable elements
-- [ ] Hover states with smooth transitions (150-300ms)
-- [ ] Light mode: text contrast 4.5:1 minimum
+- [ ] Hover states with smooth transitions (200-300ms)
+- [ ] Text contrast 4.5:1 minimum
 - [ ] Focus states visible for keyboard navigation
 - [ ] `prefers-reduced-motion` respected
 - [ ] Responsive: 375px, 768px, 1024px, 1440px
-- [ ] No content hidden behind fixed navbars
 - [ ] No horizontal scroll on mobile
+- [ ] No content hidden behind fixed navbar
+- [ ] Section labels in Japanese (not English marketing terms)
