@@ -918,7 +918,7 @@
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
                             style="display: none;" x-show="activeProject === 'instagram-generator'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
-                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                            <div class="relative w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
                                 x-show="activeProject === 'instagram-generator'" x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
@@ -927,15 +927,15 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             Instagram Graph API Token Generator
                                         </h3>
                                         <div class="mb-4">
-                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                            <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://instagram.salvador79.dev/" target="_blank" rel="noopener">
-                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                                🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
                                         <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
@@ -958,7 +958,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/instagram_site.jpg"
                                             alt="Instagram Graph API Token Generator Screenshot">
@@ -980,15 +980,15 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             有限会社ひまわり建宅 公式サイト
                                         </h3>
                                         <div class="mb-4">
-                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                            <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://himaken.co.jp/" target="_blank" rel="noopener">
-                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                                🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
                                         <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
@@ -1003,7 +1003,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/himaken.jpg"
                                             alt="ひまわり建宅 Screenshot">
@@ -1025,9 +1025,9 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             前田杯 釣り大会システム
                                         </h3>
                                         <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
@@ -1047,9 +1047,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
-                                            src="./assets/images/maedahai.jpg"
+                                            src="./assets/images/works/maedahai.png"
                                             alt="前田杯 Screenshot">
                                     </div>
                                 </div>
@@ -1069,16 +1069,16 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
                                         <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             頭痛管理Webアプリ「ずきメモ」
                                         </h3>
                                         <p class="text-blue-400 text-sm font-semibold mb-4 italic">「痛すぎて滅、治したくて記録。」</p>
                                         <div class="mb-4">
-                                            <a class="text-blue-400 hover:underline text-sm font-semibold inline-flex items-center"
+                                            <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://zukimemo.sho-tsukamoto.jp" target="_blank" rel="noopener">
-                                                🔗 サイトにアクセスする <span class="ml-1">→</span>
+                                                🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
                                         <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
@@ -1115,9 +1115,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
-                                            src="./assets/images/zukimemo.jpg"
+                                            src="./assets/images/works/zukimemo.png"
                                             alt="ずきメモ Screenshot">
                                     </div>
                                 </div>
@@ -1137,12 +1137,12 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             潮見表ツール「シオヨミ」
                                         </h3>
-                                        <div class="mb-6">
+                                        <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank" rel="noopener">
                                                 🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
@@ -1180,7 +1180,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/works/shioyomi.png"
                                             alt="シオヨミ Screenshot">
@@ -1202,12 +1202,12 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             Tailwind CSS Spacing Size QuickLook
                                         </h3>
-                                        <div class="mb-6">
+                                        <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln" target="_blank" rel="noopener">
                                                 🔗 Chrome ウェブストア <span class="ml-2 font-mono">→</span>
@@ -1239,7 +1239,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
                                             alt="Tailwind CSS Spacing Size QuickLook Screenshot">
@@ -1261,12 +1261,12 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             Tailwind CSS Font Size QuickLook
                                         </h3>
-                                        <div class="mb-6">
+                                        <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://chromewebstore.google.com/detail/tailwind-css-font-size-qu/jdecefnmjmfbmcmpaboecebdlkpmkeel" target="_blank" rel="noopener">
                                                 🔗 Chrome ウェブストア <span class="ml-2 font-mono">→</span>
@@ -1298,7 +1298,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg"
                                             alt="Tailwind CSS Font Size QuickLook Screenshot">
@@ -1320,12 +1320,12 @@
                                 x-transition:leave-end="opacity-0 scale-95">
                                 <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                <div class="mt-4 space-y-6">
                                     <div>
-                                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                                             YouTube「高嶺のしょぴこさん♪」運営
                                         </h3>
-                                        <div class="mb-6">
+                                        <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
                                                 href="https://www.youtube.com/@shopico3" target="_blank" rel="noopener">
                                                 🔗 チャンネルにアクセスする <span class="ml-2 font-mono">→</span>
@@ -1359,7 +1359,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded-xl overflow-hidden border border-zinc-800">
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
                                         <img class="w-full object-cover"
                                             src="./assets/images/works/youtube.png"
                                             alt="高嶺のしょぴこさん♪ Screenshot">
