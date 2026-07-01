@@ -73,16 +73,29 @@ function init() {
         }
     }, TIMEOUT);
 
-    // Works
-    const swiper = new Swiper(".swiper", {
+    // Works Carousel
+    const worksSwiper = new Swiper(".works-swiper", {
         modules: [Navigation, Pagination],
-        slidesPerView: 3,
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: false,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            }
+        },
         pagination: {
-            el: ".swiper-pagination"
+            el: ".swiper-pagination",
+            clickable: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
+            prevEl: ".swiper-button-prev",
         }
     });
 }
