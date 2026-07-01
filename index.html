@@ -59,6 +59,16 @@
     <link href="/assets/css/app.scss" rel="stylesheet">
     <script type="module" src="/assets/js/app.js"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGB70X3QPG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZGB70X3QPG');
+    </script>
+
 </head>
 
 <body class="bg-zinc-950 text-zinc-100 antialiased">
@@ -852,7 +862,8 @@
                                 @click="activeProject = 'spacing-quicklook'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg" alt="Tailwind CSS Spacing Size QuickLook">
+                                        src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
+                                        alt="Tailwind CSS Spacing Size QuickLook">
                                     <div
                                         class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     </div>
@@ -874,7 +885,8 @@
                                 @click="activeProject = 'fontsize-quicklook'">
                                 <figure class="relative overflow-hidden aspect-video">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg" alt="Tailwind CSS Font Size QuickLook">
+                                        src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg"
+                                        alt="Tailwind CSS Font Size QuickLook">
                                     <div
                                         class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
                                     </div>
@@ -910,22 +922,44 @@
                                 </div>
                             </article>
                         </li>
+                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
+                            <article
+                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                @click="activeProject = 'hoi-search'">
+                                <figure class="relative overflow-hidden aspect-video">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        src="./assets/images/works/hoi_top.png" alt="ほいサーチ">
+                                    <div
+                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    </div>
+                                </figure>
+                                <div class="p-5 flex-1 flex flex-col justify-between">
+                                    <h4 class="text-lg font-bold text-white mb-2 font-heading">
+                                        広島市保活支援検索ツール「ほいサーチ」
+                                    </h4>
+                                    <span
+                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
+                                </div>
+                            </article>
+                        </li>
                     </ul>
 
                     <!-- Modals (Separated from list to avoid container overflow / transform side-effects) -->
                     <div>
                         <!-- Modal 1: Instagram Graph API Token Generator -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'instagram-generator'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'instagram-generator'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-3xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'instagram-generator'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'instagram-generator'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -959,8 +993,7 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/instagram_site.jpg"
+                                        <img class="w-full object-cover" src="./assets/images/instagram_site.jpg"
                                             alt="Instagram Graph API Token Generator Screenshot">
                                     </div>
                                 </div>
@@ -968,17 +1001,19 @@
                         </div>
 
                         <!-- Modal 2: ひまわり建宅 -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'himaken'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'himaken'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'himaken'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'himaken'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1004,8 +1039,7 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/himaken.jpg"
+                                        <img class="w-full object-cover" src="./assets/images/himaken.jpg"
                                             alt="ひまわり建宅 Screenshot">
                                     </div>
                                 </div>
@@ -1013,17 +1047,19 @@
                         </div>
 
                         <!-- Modal 3: 前田杯 -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'maedahai'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'maedahai'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'maedahai'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'maedahai'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1048,8 +1084,7 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/maedahai.jpg"
+                                        <img class="w-full object-cover" src="./assets/images/maedahai.jpg"
                                             alt="前田杯 Screenshot">
                                     </div>
                                 </div>
@@ -1057,17 +1092,19 @@
                         </div>
 
                         <!-- Modal 4: ずきメモ -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'zukimemo'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'zukimemo'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'zukimemo'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'zukimemo'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1083,21 +1120,32 @@
                                         </div>
                                         <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
                                             <p>
-                                                既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact Nativeへの移行を視野に入れた設計）。
+                                                既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact
+                                                Nativeへの移行を視野に入れた設計）。
                                             </p>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>バグゼロの追求とUXの両立:</strong> 頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。</li>
-                                                    <li><strong>実用的な共有機能:</strong> ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。</li>
+                                                    <li><strong>バグゼロの追求とUXの両立:</strong>
+                                                        頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。
+                                                    </li>
+                                                    <li><strong>実用的な共有機能:</strong>
+                                                        ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>Inertia.jsによるモダンモノリス:</strong> APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。</li>
-                                                    <li><strong>厳格なDBリレーション設計:</strong> <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。</li>
-                                                    <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。</li>
+                                                    <li><strong>Inertia.jsによるモダンモノリス:</strong>
+                                                        APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。
+                                                    </li>
+                                                    <li><strong>厳格なDBリレーション設計:</strong>
+                                                        <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。
+                                                    </li>
+                                                    <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation
+                                                        APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="pt-4 border-t border-zinc-800">
@@ -1116,8 +1164,7 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/works/zukimemo.png"
+                                        <img class="w-full object-cover" src="./assets/images/works/zukimemo.png"
                                             alt="ずきメモ Screenshot">
                                     </div>
                                 </div>
@@ -1125,17 +1172,19 @@
                         </div>
 
                         <!-- Modal 5: シオヨミ -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'shioyomi'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'shioyomi'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'shioyomi'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'shioyomi'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1144,7 +1193,8 @@
                                         </h3>
                                         <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
-                                                href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank" rel="noopener">
+                                                href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank"
+                                                rel="noopener">
                                                 🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
@@ -1155,15 +1205,25 @@
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>釣果に直結するデータの統合可視化:</strong> 24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。</li>
+                                                    <li><strong>釣果に直結するデータの統合可視化:</strong>
+                                                        24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong> あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を <code>Requests</code> / <code>Services</code> / <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。</li>
-                                                    <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code> から潮汐データを、<code>Open-Meteo</code> から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
-                                                    <li><strong>ポータブルな開発環境:</strong> Apache + PHP 8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。</li>
+                                                    <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong>
+                                                        あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を
+                                                        <code>Requests</code> / <code>Services</code> /
+                                                        <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。
+                                                    </li>
+                                                    <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code>
+                                                        から潮汐データを、<code>Open-Meteo</code>
+                                                        から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
+                                                    <li><strong>ポータブルな開発環境:</strong> Apache + PHP
+                                                        8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="pt-4 border-t border-zinc-800">
@@ -1181,8 +1241,7 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/works/shioyomi.png"
+                                        <img class="w-full object-cover" src="./assets/images/works/shioyomi.png"
                                             alt="シオヨミ Screenshot">
                                     </div>
                                 </div>
@@ -1190,17 +1249,19 @@
                         </div>
 
                         <!-- Modal 6: Spacing Size QuickLook -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'spacing-quicklook'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'spacing-quicklook'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'spacing-quicklook'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'spacing-quicklook'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1209,7 +1270,8 @@
                                         </h3>
                                         <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
-                                                href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln" target="_blank" rel="noopener">
+                                                href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln"
+                                                target="_blank" rel="noopener">
                                                 🔗 Chrome ウェブストア <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
@@ -1220,13 +1282,18 @@
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>開発時の脳内変換コストの削減:</strong> 実務におけるコーディング時、<code>mb-64</code> 等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。</li>
+                                                    <li><strong>開発時の脳内変換コストの削減:</strong>
+                                                        実務におけるコーディング時、<code>mb-64</code>
+                                                        等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>超軽量・ノーライブラリ実装:</strong> ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
+                                                    <li><strong>超軽量・ノーライブラリ実装:</strong>
+                                                        ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla
+                                                        JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
                                                 </ul>
                                             </div>
                                             <div class="pt-4 border-t border-zinc-800">
@@ -1249,17 +1316,19 @@
                         </div>
 
                         <!-- Modal 7: Font Size QuickLook -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'fontsize-quicklook'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'fontsize-quicklook'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'fontsize-quicklook'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'fontsize-quicklook'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1268,7 +1337,8 @@
                                         </h3>
                                         <div class="mb-4">
                                             <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
-                                                href="https://chromewebstore.google.com/detail/tailwind-css-font-size-qu/jdecefnmjmfbmcmpaboecebdlkpmkeel" target="_blank" rel="noopener">
+                                                href="https://chromewebstore.google.com/detail/tailwind-css-font-size-qu/jdecefnmjmfbmcmpaboecebdlkpmkeel"
+                                                target="_blank" rel="noopener">
                                                 🔗 Chrome ウェブストア <span class="ml-2 font-mono">→</span>
                                             </a>
                                         </div>
@@ -1279,13 +1349,19 @@
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>Typographyレイアウトの効率化:</strong> カンプ上の文字サイズ（ピクセル）と、Tailwindの <code>text-sm</code> / <code>text-xl</code> といった抽象化されたユーティリティクラス間のピクセル数・rem換算値を瞬時にクロスリファレンスするために開発。</li>
+                                                    <li><strong>Typographyレイアウトの効率化:</strong>
+                                                        カンプ上の文字サイズ（ピクセル）と、Tailwindの <code>text-sm</code> /
+                                                        <code>text-xl</code>
+                                                        といった抽象化されたユーティリティクラス間のピクセル数・rem換算値を瞬時にクロスリファレンスするために開発。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>堅牢なブラウザ拡張アーキテクチャ:</strong> Chrome Extensions APIに準拠し、セキュアなコンテキストで軽量に動作する設計。直感的かつミニマルなポップアップUIを構築し、フロントエンドエンジニアの日常的なUI実装スピード向上に寄与。</li>
+                                                    <li><strong>堅牢なブラウザ拡張アーキテクチャ:</strong> Chrome Extensions
+                                                        APIに準拠し、セキュアなコンテキストで軽量に動作する設計。直感的かつミニマルなポップアップUIを構築し、フロントエンドエンジニアの日常的なUI実装スピード向上に寄与。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="pt-4 border-t border-zinc-800">
@@ -1308,17 +1384,19 @@
                         </div>
 
                         <!-- Modal 8: YouTube Channel -->
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4"
-                            style="display: none;" x-show="activeProject === 'youtube-shopico'" x-transition.opacity.duration.300ms>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'youtube-shopico'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
                             <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
-                                x-show="activeProject === 'youtube-shopico'" x-transition:enter="transition ease-out duration-300"
+                                x-show="activeProject === 'youtube-shopico'"
+                                x-transition:enter="transition ease-out duration-300"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-200"
                                 x-transition:leave-start="opacity-100 scale-100"
                                 x-transition:leave-end="opacity-0 scale-95">
-                                <button class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                                     @click="activeProject = null">✕</button>
                                 <div class="mt-4 space-y-6">
                                     <div>
@@ -1338,14 +1416,20 @@
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>緻密なデータドリブンPDCA:</strong> インプレッションクリック率（CTR）、視聴維持率（リテンション）、トラフィックソース等のアナリティクスデータを日々トラッキングし、高速で仮説検証サイクル（PDCA）を回す仕組みを自走。</li>
+                                                    <li><strong>緻密なデータドリブンPDCA:</strong>
+                                                        インプレッションクリック率（CTR）、視聴維持率（リテンション）、トラフィックソース等のアナリティクスデータを日々トラッキングし、高速で仮説検証サイクル（PDCA）を回す仕組みを自走。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div>
                                                 <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
                                                 <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
-                                                    <li><strong>ニッチ市場 of セグメンテーション:</strong> 『釣り』という巨大なレッドオーシャンの中で、地域や特定の釣法に特化したセグメントを定義。競合優位性の高いコンテンツポジションを戦略的に確立。</li>
-                                                    <li><strong>CTR/リテンションの最大化施策:</strong> クリック率向上のためのサムネイル（構図・配色）の比較検証、および視聴維持率を最大化するための動画構成のデータ最適化を徹底。結果として、<strong>チャンネル開設からわずか約半年でチャンネル登録者数1,000人を突破</strong>し、収益化要件を最速でクリア。ゼロからのメディア立ち上げ力とプロダクトグロース能力を実証。</li>
+                                                    <li><strong>ニッチ市場 of セグメンテーション:</strong>
+                                                        『釣り』という巨大なレッドオーシャンの中で、地域や特定の釣法に特化したセグメントを定義。競合優位性の高いコンテンツポジションを戦略的に確立。
+                                                    </li>
+                                                    <li><strong>CTR/リテンションの最大化施策:</strong>
+                                                        クリック率向上のためのサムネイル（構図・配色）の比較検証、および視聴維持率を最大化するための動画構成のデータ最適化を徹底。結果として、<strong>チャンネル開設からわずか約半年でチャンネル登録者数1,000人を突破</strong>し、収益化要件を最速でクリア。ゼロからのメディア立ち上げ力とプロダクトグロース能力を実証。
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div class="pt-4 border-t border-zinc-800">
@@ -1360,13 +1444,89 @@
                                         </div>
                                     </div>
                                     <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
-                                        <img class="w-full object-cover"
-                                            src="./assets/images/works/youtube.png"
+                                        <img class="w-full object-cover" src="./assets/images/works/youtube.png"
                                             alt="高嶺のしょぴこさん♪ Screenshot">
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'hoi-search'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'hoi-search'"
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="mt-4 space-y-6">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                                            広島市保活支援検索ツール「ほいサーチ」
+                                        </h3>
+                                        <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                                            「自治体の複雑な公開情報を、ユーザー目線で徹底的に構造化」</p>
+                                        <div class="mb-4">
+                                            <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
+                                                href="https://hoi-search.pages.dev/hiroshima/naka/" target="_blank"
+                                                rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                                            <p>
+                                                広島市の自治体公式データを活用し、スマートフォンでの閲覧ストレス解消と、保護者が本当に必要とする条件による高速絞り込みに特化させた保活支援Webアプリケーション。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>モバイル最適化と視認性改善:</strong>
+                                                        自治体公式の複雑な一覧表や大容量PDFが持つ「スマートフォンからでは著しく読みづらい」というペインを、レスポンシブなUI設計により根本から解消。
+                                                    </li>
+                                                    <li><strong>保護者ファーストのこだわり絞り込み:</strong>
+                                                        「おむつの園内処分可能か」「布団の持ち込み不要か」「駐車場の有無」など、従来の公開情報では埋もれがちだった保護者のコアな判断基準を1タップでサクサクフィルタリングできる検索ロジックを実装。
+                                                    </li>
+                                                    <li><strong>直感的な基本・延長保育時間の可視化:</strong>
+                                                        各施設の預かり時間をグラフィカルなタイムライン形式に落とし込み、複数施設の比較検討を直感的に行えるUXを追求。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫・データの透明性:</h5>
+                                                <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                                                    <li><strong>公式ソースとの透過的連携:</strong>
+                                                        非公式ツールでありながら情報の正確性と信頼性を担保するため、元データである広島市公式のデータソースURLへダイレクトに遷移・確認できる透過的なリンク設計。
+                                                    </li>
+                                                    <li><strong>エッジホスティングによる超高速配信:</strong> インフラにCloudflare
+                                                        Pagesを採用。地域ごとに最適化されたデータを高速配信し、子育て中の慌ただしい時間でも一切の待ち時間を感じさせない高速なページ表示速度を実現。
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-1.5">
+                                                    <span class="tag">HTML5 / CSS3</span>
+                                                    <span class="tag">JavaScript</span>
+                                                    <span class="tag">Tailwind CSS</span>
+                                                    <span class="tag">Cloudflare Pages</span>
+                                                    <span class="tag">Open Data Utilization</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img class="w-full object-cover" src="./assets/images/works/hoi_top.png"
+                                            alt="ほいサーチ スクリーンショット">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
