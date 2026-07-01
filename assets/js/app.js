@@ -73,31 +73,8 @@ function init() {
         }
     }, TIMEOUT);
 
-    // Works Carousel
-    const worksSwiper = new Swiper(".works-swiper", {
-        modules: [Navigation, Pagination],
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: false,
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 32,
-            }
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
-    });
+    // Works (グリッドレイアウト使用中)
+
 }
 
 if (document.readyState === 'loading') {
