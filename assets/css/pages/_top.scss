@@ -57,3 +57,19 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes scroll-line-anim {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.scroll-line-active {
+    animation: scroll-line-anim 2.2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}

@@ -121,7 +121,7 @@
     <main class="">
         <article class="text-white">
             <section class="hero" style="background-image: url(&#39;./assets/images/bg-sea-f5bc8de6.jpg&#39;)">
-                <div class="relative z-10">
+                <div class="relative z-10 flex flex-col items-center">
                     <p class="mb-6 text-3xl tracking-wider job-title">
                         web developer
                     </p>
@@ -140,6 +140,17 @@
                         <span>t</span>
                         <span>o</span>
                     </h1>
+                    <p class="hero-subtitle mt-8 text-base md:text-xl tracking-widest font-medium text-zinc-300 opacity-0 transform translate-y-4 transition-all duration-1000 ease-out">
+                        ビジネスを動かす、総合力を持ったエンジニア
+                    </p>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center scroll-indicator opacity-0 transition-opacity duration-1000 ease-out">
+                    <span class="text-xs uppercase tracking-[0.25em] text-zinc-400 mb-3 font-semibold">Scroll</span>
+                    <div class="w-[1px] h-12 bg-zinc-700/50 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1/2 bg-blue-500 scroll-line-active"></div>
+                    </div>
                 </div>
             </section>
             <!-- ABOUT SECTION -->

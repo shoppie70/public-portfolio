@@ -71,6 +71,21 @@ function init() {
             const element = targets[index];
             element.classList.add(CLASSNAME);
         }
+
+        // タイトル（Sho Tsukamoto）のアニメーション完了後にサブタイトルとスクロールを表示
+        const subtitle = document.querySelector('.hero-subtitle');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        
+        setTimeout(() => {
+            if (subtitle) {
+                subtitle.classList.remove('opacity-0', 'translate-y-4');
+                subtitle.classList.add('opacity-100', 'translate-y-0');
+            }
+            if (scrollIndicator) {
+                scrollIndicator.classList.remove('opacity-0');
+                scrollIndicator.classList.add('opacity-100');
+            }
+        }, 1400);
     }, TIMEOUT);
 
     // Works (グリッドレイアウト使用中)
