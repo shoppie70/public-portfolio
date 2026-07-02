@@ -22,6 +22,8 @@ body {
     animation-name: fadeIn;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6);
+
 }
 
 .profile-name-line {
@@ -31,6 +33,7 @@ body {
 }
 
 .title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6);
 
     span {
         display: block;
@@ -53,6 +56,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -62,9 +66,11 @@ body {
     0% {
         transform: translateY(-100%);
     }
+
     50% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(100%);
     }
