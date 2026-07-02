@@ -85,7 +85,7 @@ function init() {
                 scrollIndicator.classList.remove('opacity-0');
                 scrollIndicator.classList.add('opacity-100');
             }
-        }, 1400);
+        }, 800);
     }, TIMEOUT);
 
     // Works (グリッドレイアウト使用中)
