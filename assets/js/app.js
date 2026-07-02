@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs';
 import 'animate.css';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -99,9 +99,14 @@ function init() {
         if (isMobile) {
             if (!worksSwiper && document.querySelector('.works-swiper')) {
                 worksSwiper = new Swiper('.works-swiper', {
-                    modules: [Pagination],
+                    modules: [Pagination, Autoplay],
                     slidesPerView: 1,
                     spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
                     pagination: {
                         el: '.works-swiper-pagination',
                         clickable: true,
@@ -110,9 +115,14 @@ function init() {
             }
             if (!blogWebtySwiper && document.querySelector('.blog-webty-swiper')) {
                 blogWebtySwiper = new Swiper('.blog-webty-swiper', {
-                    modules: [Pagination],
+                    modules: [Pagination, Autoplay],
                     slidesPerView: 1,
                     spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
                     pagination: {
                         el: '.blog-webty-swiper-pagination',
                         clickable: true,
@@ -121,9 +131,14 @@ function init() {
             }
             if (!blogHajimeSwiper && document.querySelector('.blog-hajime-swiper')) {
                 blogHajimeSwiper = new Swiper('.blog-hajime-swiper', {
-                    modules: [Pagination],
+                    modules: [Pagination, Autoplay],
                     slidesPerView: 1,
                     spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
                     pagination: {
                         el: '.blog-hajime-swiper-pagination',
                         clickable: true,
