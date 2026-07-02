@@ -1,14 +1,12 @@
-@use "sass:meta";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@include meta.load-css('components/reset');
+@import 'components/reset';
 
-@include meta.load-css('components/color');
-@include meta.load-css('components/font');
-@include meta.load-css('components/swiper');
+@import 'components/color';
+@import 'components/font';
+@import 'components/swiper';
 
-@include meta.load-css('pages/top');
-@include meta.load-css('components/custom');
-
+@import 'pages/top';
+@import 'components/custom';
