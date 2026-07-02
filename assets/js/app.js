@@ -88,8 +88,66 @@ function init() {
         }, 800);
     }, TIMEOUT);
 
-    // Works (グリッドレイアウト使用中)
+    // Swiper instances management
+    let worksSwiper = null;
+    let blogWebtySwiper = null;
+    let blogHajimeSwiper = null;
 
+    function handleResize() {
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+        if (isMobile) {
+            if (!worksSwiper && document.querySelector('.works-swiper')) {
+                worksSwiper = new Swiper('.works-swiper', {
+                    modules: [Pagination],
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.works-swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+            if (!blogWebtySwiper && document.querySelector('.blog-webty-swiper')) {
+                blogWebtySwiper = new Swiper('.blog-webty-swiper', {
+                    modules: [Pagination],
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.blog-webty-swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+            if (!blogHajimeSwiper && document.querySelector('.blog-hajime-swiper')) {
+                blogHajimeSwiper = new Swiper('.blog-hajime-swiper', {
+                    modules: [Pagination],
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.blog-hajime-swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        } else {
+            if (worksSwiper) {
+                worksSwiper.destroy(true, true);
+                worksSwiper = null;
+            }
+            if (blogWebtySwiper) {
+                blogWebtySwiper.destroy(true, true);
+                blogWebtySwiper = null;
+            }
+            if (blogHajimeSwiper) {
+                blogHajimeSwiper.destroy(true, true);
+                blogHajimeSwiper = null;
+            }
+        }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
 }
 
 if (document.readyState === 'loading') {
