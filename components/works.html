@@ -10,230 +10,234 @@
                         </div>
                     </div>
                     <h3 class="text-xl font-bold mb-8 text-zinc-300 font-heading">社外プロジェクト &amp; 個人開発</h3>
-                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Project 1 -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'instagram-generator'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/instagram.jpg" alt="Instagram Graph API Token Generator">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div class="works-swiper swiper md:!overflow-visible w-full pb-10 md:pb-0">
+                        <ul class="swiper-wrapper md:!grid md:!grid-cols-3 md:gap-8">
+                            <!-- Project 1 -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.2s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'instagram-generator'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/instagram.jpg" alt="Instagram Graph API Token Generator">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            Instagram Graph API Token Generator
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        Instagram Graph API Token Generator
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 2 -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'himaken'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/himaken.jpg" alt="ひまわり建宅">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 2 -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.4s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'himaken'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/himaken.jpg" alt="ひまわり建宅">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            ひまわり建宅
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">WordPress
+                                            / Sage 10</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        ひまわり建宅
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">WordPress
-                                        / Sage 10</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 3 -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'maedahai'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/maedahai.jpg" alt="前田杯">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 3 -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.6s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'maedahai'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/maedahai.jpg" alt="前田杯">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            前田杯 釣り大会システム
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        前田杯 釣り大会システム
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 4: ずきメモ -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'zukimemo'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/zukimemo.png" alt="ずきメモ">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 4: ずきメモ -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.2s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'zukimemo'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/zukimemo.png" alt="ずきメモ">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            頭痛管理Webアプリ「ずきメモ」
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        頭痛管理Webアプリ「ずきメモ」
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Laravel</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 5: シオヨミ -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'shioyomi'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/shioyomi.png" alt="シオヨミ">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 5: シオヨミ -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.4s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'shioyomi'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/shioyomi.png" alt="シオヨミ">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            潮見表ツール「シオヨミ」
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        潮見表ツール「シオヨミ」
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 6: Spacing Size QuickLook -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'spacing-quicklook'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
-                                        alt="Tailwind CSS Spacing Size QuickLook">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 6: Spacing Size QuickLook -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.6s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'spacing-quicklook'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
+                                            alt="Tailwind CSS Spacing Size QuickLook">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            Tailwind CSS Spacing Size QuickLook
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Chrome拡張機能</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        Tailwind CSS Spacing Size QuickLook
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Chrome拡張機能</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 7: Font Size QuickLook -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'fontsize-quicklook'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg"
-                                        alt="Tailwind CSS Font Size QuickLook">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 7: Font Size QuickLook -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.2s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'fontsize-quicklook'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg"
+                                            alt="Tailwind CSS Font Size QuickLook">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            Tailwind CSS Font Size QuickLook
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Chrome拡張機能</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        Tailwind CSS Font Size QuickLook
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">Chrome拡張機能</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 8: YouTube Channel -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.4s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'youtube-shopico'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/youtube.png" alt="高嶺のしょぴこさん♪">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 8: YouTube Channel -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.4s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'youtube-shopico'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/youtube.png" alt="高嶺のしょぴこさん♪">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            高嶺のしょぴこさん♪
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">YouTube</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        高嶺のしょぴこさん♪
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">YouTube</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 9: ほいサーチ -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.6s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'hoi-search'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/hoi_top.png" alt="ほいサーチ">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 9: ほいサーチ -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.6s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'hoi-search'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/hoi_top.png" alt="ほいサーチ">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            ほいサーチ
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        ほいサーチ
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">個人開発</span>
-                                </div>
-                            </article>
-                        </li>
+                                </article>
+                            </li>
 
-                        <!-- Project 10: 岡山科学技術専門学校 授業資料 -->
-                        <li class="wow animate__ animate__fadeIn" data-wow-delay="0.2s">
-                            <article
-                                class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
-                                @click="activeProject = 'oist-lecture'">
-                                <figure class="relative overflow-hidden aspect-video">
-                                    <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        src="./assets/images/works/kagisen.png" alt="岡山科学技術専門学校 授業資料">
-                                    <div
-                                        class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <!-- Project 10: 岡山科学技術専門学校 授業資料 -->
+                            <li class="swiper-slide h-auto wow animate__ animate__fadeIn md:!w-auto md:!mr-0" data-wow-delay="0.2s">
+                                <article
+                                    class="premium-card rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer"
+                                    @click="activeProject = 'oist-lecture'">
+                                    <figure class="relative overflow-hidden aspect-video">
+                                        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            src="./assets/images/works/kagisen.png" alt="岡山科学技術専門学校 授業資料">
+                                        <div
+                                            class="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        </div>
+                                    </figure>
+                                    <div class="p-5 flex-1 flex flex-col justify-between">
+                                        <h4 class="text-sm font-bold text-white mb-2 font-heading">
+                                            岡山科学技術専門学校 情報システム学科 授業資料
+                                        </h4>
+                                        <span
+                                            class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">企業連携授業</span>
                                     </div>
-                                </figure>
-                                <div class="p-5 flex-1 flex flex-col justify-between">
-                                    <h4 class="text-sm font-bold text-white mb-2 font-heading">
-                                        岡山科学技術専門学校 情報システム学科 授業資料
-                                    </h4>
-                                    <span
-                                        class="text-xs text-blue-400 font-semibold self-start bg-blue-950/50 border border-blue-900/50 px-2 py-0.5 rounded">企業連携授業</span>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
+                                </article>
+                            </li>
+                        </ul>
+                        <!-- Pagination -->
+                        <div class="works-swiper-pagination swiper-pagination md:hidden"></div>
+                    </div>
 
                     <!-- Modals (Separated from list to avoid container overflow / transform side-effects) -->
                     <div>
