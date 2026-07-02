@@ -1,21 +1,17 @@
-<header class="fixed top-4 left-4 right-4 z-50">
-    <nav class="mx-auto max-w-screen-lg glass-nav text-white px-6 py-4 rounded-full shadow-xl">
+<header class="fixed top-4 left-4 right-4 z-50" x-data="{ mobileMenuOpen: false }">
+    <nav class="mx-auto max-w-screen-lg glass-nav text-white px-6 py-4 rounded-3xl md:rounded-full shadow-xl">
         <div class="flex items-center justify-between w-full">
             <a href="#"
                 class="text-xl font-bold tracking-widest font-heading hover:text-blue-500 transition-colors duration-200">SHO.TSUKAMOTO</a>
-            <ul class="flex items-center space-x-6 md:space-x-12">
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center space-x-6 md:space-x-12">
                 <li>
                     <a href="#about"
                         class="text-xs md:text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
                         ABOUT
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="#core-value"
-                        class="text-xs md:text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
-                        CORE VALUE
-                    </a>
-                </li> -->
                 <li>
                     <a href="#skills"
                         class="text-xs md:text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
@@ -43,6 +39,56 @@
                 <li>
                     <a href="#blog"
                         class="text-xs md:text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        BLOG
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="block md:hidden text-white focus:outline-none" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" x-show="!mobileMenuOpen" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" x-show="mobileMenuOpen" style="display: none;" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden mt-4 pt-4 border-t border-white/10" x-show="mobileMenuOpen" x-collapse style="display: none;">
+            <ul class="flex flex-col space-y-4 pb-2">
+                <li>
+                    <a href="#about" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        SKILLS
+                    </a>
+                </li>
+                <li>
+                    <a href="#certifications" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        CERTIFICATIONS
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        EXPERIENCE
+                    </a>
+                </li>
+                <li>
+                    <a href="#works" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
+                        WORKS
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog" @click="mobileMenuOpen = false"
+                        class="block text-sm font-semibold tracking-wider hover:text-blue-500 transition-colors duration-200">
                         BLOG
                     </a>
                 </li>
