@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./index.html",
+    "./components/**/*.html",
     "./assets/**/*.{js,ts,jsx,tsx,vue,svelte,scss,css}",
   ],
   theme: {
@@ -9,4 +10,3 @@ module.exports = {
   },
   plugins: [],
 }
-
