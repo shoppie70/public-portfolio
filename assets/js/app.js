@@ -75,6 +75,7 @@ function init() {
         // タイトル（Sho Tsukamoto）のアニメーション完了後にサブタイトルとスクロールを表示
         const subtitle = document.querySelector('.hero-subtitle');
         const scrollIndicator = document.querySelector('.scroll-indicator');
+        const heroBadges = document.querySelector('.hero-badges');
         
         setTimeout(() => {
             if (subtitle) {
@@ -85,6 +86,13 @@ function init() {
                 scrollIndicator.classList.remove('opacity-0');
                 scrollIndicator.classList.add('opacity-100');
             }
+            // バッジをサブタイトルより少し遅らせてフェードイン
+            setTimeout(() => {
+                if (heroBadges) {
+                    heroBadges.classList.remove('opacity-0', 'translate-y-2');
+                    heroBadges.classList.add('opacity-100', 'translate-y-0');
+                }
+            }, 300);
         }, 800);
     }, TIMEOUT);
 
@@ -163,6 +171,16 @@ function init() {
 
     handleResize();
     window.addEventListener('resize', handleResize);
+
+    // 使用年数の自動計算（data-experience-start属性をもつ要素に年数を挿入）
+    function updateYearsOfExperience() {
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('[data-experience-start]').forEach(el => {
+            const startYear = parseInt(el.dataset.experienceStart, 10);
+            el.textContent = currentYear - startYear;
+        });
+    }
+    updateYearsOfExperience();
 }
 
 if (document.readyState === 'loading') {

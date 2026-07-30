@@ -1,153 +1,132 @@
-<!-- prettier-ignore -->
-<div align="center">
-
-<img src="./public/apple-touch-icon.png" alt="sho-tsukamoto.jp logo" width="96" height="96" />
-
 # sho-tsukamoto.jp
 
-*塚本 翔（Sho Tsukamoto）のポートフォリオサイトのフロントエンドソースコード*
+塚本 翔（Sho Tsukamoto）のポートフォリオサイトのソースコードです。
 
-[![Vite](https://img.shields.io/badge/Vite-v8.1.2-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4.19-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Alpine.js](https://img.shields.io/badge/Alpine.js-v3.15.12-8BC0D0?style=flat-square&logo=alpine.js&logoColor=white)](https://alpinejs.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js->=20-3C873A?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
+## 個人データ
 
-⭐ If you like this project, star it on GitHub — it helps a lot!
+- **氏名**: 塚本 翔 (Sho Tsukamoto)
+- **生年月日**: 1997年7月9日
+- **出身**: 岡山県
+- **Web**: https://sho-tsukamoto.jp
+- **GitHub**: https://github.com/shoppie70
+- **LinkedIn**: https://www.linkedin.com/in/翔-塚本-74b27925a/
+- **職務経歴書 (CV)**: https://hackmd.io/@sho-tsukamoto/CV
 
-[Overview](#overview) • [Features](#features) • [Tech Stack](#tech-stack) • [Directory Structure](#directory-structure) • [Getting Started](#getting-started) • [Profile & Works](#profile--works)
+## 概要
 
-</div>
+幼少期からコンピュータや工学に興味があり、Webエンジニアとして活動。特にPHPとLaravelを得意とし、フルスクラッチ開発から大規模システム設計まで幅広く対応可能です。
+
+単なるコード実装にとどまらず、打ち合わせ、要件定義、データベース設計、インフラ構築、フロントエンド・バックエンド開発に至るまで **"一気通貫で対応できること"** が最大の強みです。
+
+また、第二種電気工事士などの国家資格を有し、強電・弱電工事、LAN構築といったリアルなネットワークインフラ整備もこなせる多才なスキルセットを持っています。
+
+現在は株式会社ハジメクリエイトの **"チーフエンジニア"** として、自社システム開発の統括、採用活動、人事評価など、組織の成長を支える中枢業務も広く担っています。入社わずか1年、27歳という異例の若さで社内最年少でのチーフエンジニア昇格を果たしました。
 
 ---
 
-## Overview
+## スキルセット
 
-本リポジトリは、**塚本 翔（Sho Tsukamoto）**の公式ポートフォリオサイト [sho-tsukamoto.jp](https://sho-tsukamoto.jp) のフロントエンドソースコードです。
+### 主要スキル — AI駆動開発 & 上流工程・ディレクション
 
-Next.jsやReactなどの重厚なフレームワークをあえて使用せず、**Vite** と **`vite-plugin-html-inject`** を組み合わせたシンプルな静的サイト構成を採用しています。HTMLをパーツ単位でコンポーネント化しつつ、**Tailwind CSS + SCSS** によるモダンで柔軟なスタイリングと、**Alpine.js** による超軽量なリアクティブ制御を実現した、パフォーマンスとメンテナンス性の高い設計が特徴です。
+生成AIの台頭により、私の主たる職務は顧客との深い対話でビジネス課題を抽出し、仕様書へ落とし込み、AIエージェント（LLM）や後輩エンジニアといった開発リソースへ向けてコンテキストを設計・ディレクションすることです。
 
-> [!NOTE]
-> **なぜこの構成なのか？**
-> ポートフォリオサイトのようなコンテンツ主体の静的ページにおいて、過剰なJavaScriptフレームワークは初期読み込み（LCPやFIDなどのWeb Vitals）を阻害する要因になります。Viteの高速なビルドとHTMLインジェクション、最小限のランタイムを持つAlpine.jsを組み合わせることで、開発効率とブラウザでの表示パフォーマンスを両立しています。
+- **顧客折衝 & 意思決定**: 顧客の潜在ニーズを言語化し、ビジネスゴールから逆算したシステム仕様の策定
+- **AI駆動開発ディレクション**: LLM/AIエージェントを最大限にスケールさせる文脈設計とプロンプト制御
+- **チームマネジメント**: 後輩への的確なタスク切り出し、技術的ディレクション、コードレビューによる品質担保
 
-## Features
+### バックエンドスタック
 
-- 🧱 **HTMLコンポーネント設計**: `vite-plugin-html-inject` を導入し、`components/` ディレクトリ配下にセクションごとのHTMLを分割管理。ルートの `index.html` から `<load ="..." />` 形式で読み込むため、保守性が非常に高いです。
-- ⚡ **超高速な開発環境**: ビルドツールに Vite を採用。瞬時の Hot Module Replacement (HMR) と、最適化された本番ビルドを提供します。
-- 🎨 **Tailwind CSS & SCSS のハイブリッド装飾**: ユーティリティファーストなスタイリングを基本としつつ、複雑なUIパーツやアニメーションは SCSS (`assets/css/app.scss`) で記述する柔軟なスタイル設計。
-- 🏃 **Alpine.js による軽量インタラクション**: 状態管理やDOM操作には Alpine.js を採用し、Vanilla JS に近い速度と記述量でアコーディオンやモーダルなどの動きを実装。
-- 🌀 **リッチなビジュアル表現**: Swiper によるカルーセル表示や、Animate.css による動的なスクロールアニメーションを搭載。
+- **PHP**: 5.2〜8.x まで幅広く経験（約8年）
+- **Laravel**: Laravel 6〜12 を主に利用。[laravel-modules](https://github.com/nWidart/laravel-modules) を用いた管理画面とフロント画面の分離、モジュラモノリス設計
+- **WordPress**: MVC構造による洗練されたテーマ開発と、仕様変更に強い高速コーディング
+- **EC-CUBE & Stripe**: カスタムプラグイン開発、柔軟なEC構築および複雑な決済連携実装
+- **開発環境**: Docker, PhpStorm
 
-## Tech Stack
+### フロントエンド & モバイルスタック
 
-### Core & Build
-| テクノロジー | バージョン | 用途 |
-| :--- | :--- | :--- |
-| **Vite** | `^8.1.2` | ビルドツール / 開発サーバー |
-| **vite-plugin-html-inject** | `^1.1.2` | HTMLの分割・インジェクション |
-| **PostCSS** | `^8.5.16` | CSSの後処理・最適化 |
+- **React (SPA)**: コンポーネント設計、状態管理、パフォーマンスチューニング。SPA Webアプリケーション開発・リリース実績が豊富
+- **React Native**: iOS/Android向けのデバイスネイティブ機能を活かしたモバイルアプリ構築。顧客と打ち合わせを重ねながら1人で開発からリリースまで一貫して対応
+- **HTML5 / CSS3 / JavaScript**: Tailwind CSS、BEM規則に基づくSCSS、Alpine.js による軽量でリッチな設計
+- **Inertia.js**: Laravel + React のモダンモノリス構成
 
-### Styling & UI
-| テクノロジー | バージョン | 用途 |
-| :--- | :--- | :--- |
-| **Tailwind CSS** | `^3.4.19` | ユーティリティファーストCSS |
-| **Sass (SCSS)** | `^1.101.0` | CSSプリプロセッサ |
-| **Autoprefixer** | `^10.5.2` | ベンダープレフィックス自動付与 |
-| **Swiper** | `^14.0.1` | カルーセル・スライダーUI |
-| **Animate.css** | `^4.1.1` | CSSアニメーションライブラリ |
+### その他スキル
 
-### Client-side Logic & Helpers
-| テクノロジー | バージョン | 用途 |
-| :--- | :--- | :--- |
-| **Alpine.js** | `^3.15.12` | 軽量リアクティブJavaScriptフレームワーク |
-| **Axios** | `^1.18.1` | HTTPクライアント（APIリクエスト用） |
-| **Lodash** | `^4.18.1` | JavaScriptユーティリティ |
+- Git によるバージョン管理・チーム開発
+- Linux サーバー環境構築・運用
+- LAN構築・ネットワーク設計・NAS構築
+- Docker / 開発環境構築
+- AI駆動開発（LLM連携・開発効率化設計）
+- PCハードウェア修理・SSD換装・復旧作業
 
-## Directory Structure
+---
 
-```text
-.
-├── index.html              # メインエントリーHTML
-├── tailwind.config.js       # Tailwind CSS 設定
-├── postcss.config.js        # PostCSS 設定
-├── vite.config.js           # Vite 設定
-├── assets/                  # アセットディレクトリ
-│   ├── css/
-│   │   └── app.scss         # メインスタイルシート (Tailwindディレクティブ含む)
-│   └── js/
-│       ├── app.js           # JavaScriptエントリーポイント
-│       └── bootstrap.js     # ライブラリ等の初期化処理
-├── components/              # 分割されたHTMLコンポーネント
-│   ├── head/                # headタグ内の各種メタデータ (SEO, OGPなど)
-│   ├── about.html           # 自己紹介セクション
-│   ├── blog.html            # ブログセクション
-│   ├── skills.html          # スキルセクション
-│   ├── works.html           # 制作実績セクション
-│   └── ...                  # その他UIパーツ
-├── public/                  # 静的ファイル (画像, OGP, ファビコンなど)
-└── dist/                    # ビルド後の成果物出力先
-```
+## 資格・認定
 
-## Getting Started
+| 取得年月 | 資格名                                                            | 種別                    |
+| -------- | ----------------------------------------------------------------- | ----------------------- |
+| —       | **第二種電気工事士**                                        | 国家資格                |
+| —       | **工事担任者 第二級デジタル通信**                           | 国家資格                |
+| —       | **二級小型船舶操縦士**                                      | 国家資格                |
+| 2022.12  | **Google デジタルマーケティングの基礎 認定**                | Google / IAB Europe公認 |
+| 2024.01  | **ドローン・ジャパン ドローンエンジニア養成塾 16期生 修了** | 民間認定                |
+| 2024.03  | **ITエンジニアの特性に対応した管理職養成プログラム 修了**   | 厚生労働省委託事業      |
 
-### Prerequisites
+> **ドローンエンジニア養成塾**では以下3課程を修了:
+>
+> - ArduPilot Professional Operator Course
+> - ArduPilot Application Developer Course
+> - ArduPilot Flight Code Programming Course
 
-- **Node.js** >= `20.x` (LTS推奨)
-- **npm** (Node.jsに同梱)
+---
 
-### Installation
+## 学歴・職歴
 
-リポジトリをクローンし、依存パッケージをインストールします。
+| 期間               | 所属                                                                                                              |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| 2013.04 – 2019.03 | **国立津山工業高等専門学校 情報工学科** — ハードからソフトまで総合力を持つコンピュータ技術者を目指して学ぶ |
+| 2015.07 – 2020.06 | **学習塾てらこや** — 指導スタッフとして「高専生専用の集団授業クラス」を立ち上げ           |
+| 2020.07 – 2023.02 | **ウェブティ株式会社** — 正社員 Webエンジニア。Laravel を用いたシステム開発から Web制作まで幅広く担当      |
+| 2023.04 – 現在    | **株式会社ハジメクリエイト** — チーフエンジニア。入社1年で社内最年少昇格                                   |
+
+---
+
+## 制作実績 (Works)
+
+| プロジェクト                                     | 技術スタック                                             | 概要                                                                                                    |
+| ------------------------------------------------ | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Instagram Graph API Token Generator**    | Laravel                                                  | Instagram埋め込み用トークンを自動取得・更新するツール。世界中から日常的に利用されている個人開発サービス |
+| **有限会社ひまわり建宅 公式サイト**        | WordPress                                      | 岡山市北区の不動産会社のコーポレートサイト。打ち合わせから実装まで一気通貫で対応                        |
+| **前田杯 釣り大会システム**                | Laravel                                                  | 釣り大会の公式サイト＋応募エントリー管理システム                                                        |
+| **頭痛管理Webアプリ「ずきメモ」**          | PHP 8.4 / Laravel 12 / React / Inertia.js / Tailwind CSS | 頭痛・服薬ログ管理アプリ。Inertia.js によるモダンモノリス構成、気象APIとの連携でPDFレポート出力も可能   |
+| **潮見表ツール「シオヨミ」**               | 個人開発                                                 | 潮見表を手軽に確認できるWebツール                                                                       |
+| **Tailwind CSS Spacing Size QuickLook**    | Chrome拡張機能                                           | Tailwind CSS のスペーシングサイズをクイックルックで確認できるChrome拡張                                 |
+| **Tailwind CSS Font Size QuickLook**       | Chrome拡張機能                                           | Tailwind CSS のフォントサイズをクイックルックで確認できるChrome拡張                                     |
+| **YouTube「高嶺のしょぴこさん♪」**        | YouTube                                                  | YouTube チャンネル運営                                                                                  |
+| **広島市保活支援検索ツール「ほいサーチ」** | 個人開発                                                 | 広島市の保育施設を検索・比較できるWebツール                                                             |
+
+---
+
+## 技術スタック（サイト本体）
+
+| カテゴリ             | 技術                                          |
+| -------------------- | --------------------------------------------- |
+| ビルドツール         | Vite                                          |
+| CSSフレームワーク    | Tailwind CSS v3                               |
+| CSSプリプロセッサ    | Sass (SCSS)                                   |
+| JavaScriptライブラリ | Alpine.js, Swiper, Animate.css, Axios, Lodash |
+| フォント             | IBM Plex Sans, JetBrains Mono (Google Fonts)  |
+| アナリティクス       | Google Analytics (GA4)                        |
+
+---
+
+## 開発・ビルド
 
 ```bash
-git clone https://github.com/shoppie70/public-portfolio.git
-cd public-portfolio
-npm install
-```
-
-### Development
-
-ローカル開発サーバーを起動し、リアルタイムにコードの変更をプレビューします。
-
-```bash
+# ローカル開発サーバー起動
 npm run dev
-```
 
-ブラウザで `http://localhost:5173` が自動的に立ち上がります。
-
-### Build
-
-本番環境用の静的ファイルを最適化してビルドします。
-
-```bash
+# 本番ビルド
 npm run build
 ```
 
-ビルドが完了すると、プロジェクトルートに `dist/` ディレクトリが生成され、本番配備可能な HTML/CSS/JS が出力されます。
-
-> [!IMPORTANT]
-> コードを変更した後は、デプロイやコミットの前に必ず `npm run build` を実行して、ビルドエラーが発生しないことを確認してください。
-
----
-
-## Profile & Works
-
-ポートフォリオに掲載されている塚本 翔の経歴および代表的な制作実績の要約です。詳細な職務経歴は以下のリンクから確認できます。
-
-📄 **[詳細な職務経歴書 (CV) を HackMD で見る](https://hackmd.io/@sho-tsukamoto/CV)**
-
-### About Sho Tsukamoto
-幼少期からコンピュータに興味を持ち、高専の情報工学科で基礎を習得。PHP/Laravelを中心としたWebシステム開発に約8年の経験を持ち、顧客折衝、要件定義、データベース設計、インフラ構築、フロントおよびバックエンド開発まで「一気通貫で対応できること」を最大の強みとしています。
-現在は株式会社ハジメクリエイトにて、社内最年少でチーフエンジニアに昇格し、開発統括やチームマネジメントを担っています。
-
-### Qualifications & Certifications
-- **国家資格**: 第二種電気工事士、工事担任者 第二級デジタル通信、二級小型船舶操縦士
-- **その他認定**: Google デジタルマーケティングの基礎 認定、ドローン・ジャパン ドローンエンジニア養成塾 修了
-
-### Representative Works
-| プロジェクト名 | 使用技術 | 概要 |
-| :--- | :--- | :--- |
-| **ずきメモ** | Laravel, React, Inertia.js, Tailwind CSS | 頭痛・服薬ログ管理Webアプリ。気象APIと連携可能。 |
-| **Instagram Graph API Token Generator** | Laravel | Instagram埋め込み用トークンの自動取得・更新ツール（個人開発）。 |
-| **シオヨミ** | Vanilla JS, CSS | 気象庁API等のデータを活用した潮見表確認ツール。 |
-| **ほいサーチ** | React, Tailwind CSS | 広島市の保育施設を視覚的に検索・比較できる個人開発ツール。 |
+> コードを変更した際は、必ず `npm run build` でビルドエラーが発生しないことを確認してください。
