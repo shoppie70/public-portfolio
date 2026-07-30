@@ -1,3 +1,6 @@
+# スターサーバー自動FTPデプロイ ワークフロー
+# main ブランチへのPush時に自動でビルド＆デプロイを実行します
+
 name: Deploy to Star Server via FTP
 
 on:
@@ -10,22 +13,22 @@ jobs:
     name: 🎉 Deploy site via FTP
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
+      - name: 🚚 最新コードの取得
         uses: actions/checkout@v4
 
-      - name: 🔧 Use Node.js 20.x
+      - name: 🔧 Node.js 20.x のセットアップ
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: 📦 Install dependencies
+      - name: 📦 依存パッケージのインストール
         run: npm ci
 
-      - name: 🏗️ Build production bundle
+      - name: 🏗️ 静的ファイルのビルド
         run: npm run build
 
-      - name: 📂 Sync files via FTP
+      - name: 📂 FTPによるスターサーバーへの同期アップロード
         uses: SamKirland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
