@@ -17,9 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // -------------------------------------------------------------------
 // 設定値 (Cloudflare Turnstile 秘密鍵 & 送信先アドレス)
 // -------------------------------------------------------------------
-// TODO: 本番運用時は Cloudflare ダッシュボードで取得した Secret Key に差し替えてください。
-// テスト用 Secret Key ("1x0000000000000000000000000000000AA" は常にPassします)
-define('TURNSTILE_SECRET_KEY', '1x0000000000000000000000000000000AA');
+$turnstileSecret = getenv('TURNSTILE_SECRET') ?: ($_ENV['TURNSTILE_SECRET'] ?? ($_SERVER['TURNSTILE_SECRET'] ?? '1x0000000000000000000000000000000AA'));
 define('ADMIN_EMAIL', 'contact@sho-tsukamoto.jp');
 define('SITE_NAME', 'Sho Tsukamoto Portfolio');
 
@@ -72,31 +70,29 @@ if (!empty($errors)) {
 }
 
 // -------------------------------------------------------------------
-// Cloudflare Turnstile 検証
+// Cloudflare Turnstile 検証 (canonical siteverify call)
 // -------------------------------------------------------------------
-if (TURNSTILE_SECRET_KEY !== 'OFF') {
-    $verifyUrl = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-    $postFields = http_build_query([
-        'secret'   => TURNSTILE_SECRET_KEY,
-        'response' => $token,
-        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
-    ]);
+$verifyUrl = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+$postFields = http_build_query([
+    'secret'   => $turnstileSecret,
+    'response' => $token,
+    'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+]);
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $verifyUrl);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    $verifyResult = curl_exec($ch);
-    curl_close($ch);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $verifyUrl);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$verifyResult = curl_exec($ch);
+curl_close($ch);
 
-    $verifyData = json_decode($verifyResult, true);
-    if (!$verifyData || empty($verifyData['success'])) {
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'スパム検証（Turnstile）に失敗しました。もう一度お試しください。']);
-        exit;
-    }
+$verifyData = json_decode($verifyResult, true);
+if (!$verifyData || empty($verifyData['success']) || $verifyData['success'] !== true) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'message' => 'スパム検証（Turnstile）に失敗しました。もう一度お試しください。']);
+    exit;
 }
 
 // -------------------------------------------------------------------
