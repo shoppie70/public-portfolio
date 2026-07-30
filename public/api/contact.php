@@ -15,10 +15,43 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // -------------------------------------------------------------------
+// .env ファイルの読み込み処理（親ディレクトリも探索）
+// -------------------------------------------------------------------
+function loadEnv($envPath) {
+    if (!file_exists($envPath) || !is_readable($envPath)) {
+        return false;
+    }
+    $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (empty($line) || strpos($line, '#') === 0) {
+            continue;
+        }
+        if (strpos($line, '=') !== false) {
+            list($key, $value) = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value, " \t\n\r\0\x0B\"'");
+            putenv("{$key}={$value}");
+            $_ENV[$key] = $value;
+            $_SERVER[$key] = $value;
+        }
+    }
+    return true;
+}
+
+foreach ([__DIR__ . '/.env', __DIR__ . '/../.env', __DIR__ . '/../../.env'] as $possibleEnv) {
+    if (loadEnv($possibleEnv)) {
+        break;
+    }
+}
+
+// -------------------------------------------------------------------
 // 設定値 (Cloudflare Turnstile 秘密鍵 & 送信先アドレス)
 // -------------------------------------------------------------------
 $turnstileSecret = getenv('TURNSTILE_SECRET') ?: ($_ENV['TURNSTILE_SECRET'] ?? ($_SERVER['TURNSTILE_SECRET'] ?? '1x0000000000000000000000000000000AA'));
-define('ADMIN_EMAIL', 'contact@sho-tsukamoto.jp');
+$adminEmail = getenv('ADMIN_EMAIL') ?: ($_ENV['ADMIN_EMAIL'] ?? 'contact@sho-tsukamoto.jp');
+
+define('ADMIN_EMAIL', $adminEmail);
 define('SITE_NAME', 'Sho Tsukamoto Portfolio');
 
 // -------------------------------------------------------------------
