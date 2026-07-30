@@ -9,37 +9,119 @@
             </div>
         </div>
 
-        <div class="wow animate__ animate__fadeInUp" data-wow-delay="0.1s">
+        <div class="wow animate__ animate__fadeInUp" data-wow-delay="0.1s" x-data="contactForm()">
             <div class="max-w-2xl mx-auto">
-                <!-- メインCTAカード -->
-                <div class="p-8 md:p-12 bg-zinc-900/40 rounded-2xl border border-zinc-800 text-center relative overflow-hidden">
+
+                <!-- フォームメインコンテナ -->
+                <div class="p-6 md:p-10 bg-zinc-900/40 rounded-2xl border border-zinc-800 relative overflow-hidden">
                     <!-- 背景グラデーション装飾 -->
                     <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full pointer-events-none"
                         style="background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);"></div>
-                    <div class="absolute -left-10 -bottom-10 w-60 h-60 rounded-full pointer-events-none"
-                        style="background: radial-gradient(circle, rgba(120,80,255,0.06) 0%, transparent 70%);"></div>
 
                     <div class="relative">
-                        <p class="text-blue-500 font-semibold tracking-widest text-xs uppercase mb-4">GET IN TOUCH</p>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 font-heading">
-                            お気軽にご連絡ください
+                        <p class="text-blue-500 font-semibold tracking-widest text-xs uppercase mb-2">GET IN TOUCH</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 font-heading">
+                            お問い合わせ
                         </h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed mb-8">
-                            採用・業務委託・副業のご相談、技術的なお問い合わせなど、<br class="hidden md:block">
-                            どんなことでもお気軽にメールにてご連絡ください。
+                        <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-8">
+                            採用・業務委託・副業のご相談、Webシステム開発のご依頼など、お気軽にご連絡ください。<br>
+                            直送メール（<a href="mailto:contact@sho-tsukamoto.jp" class="text-blue-400 underline hover:text-blue-300">contact@sho-tsukamoto.jp</a>）でのご連絡も承っております。
                         </p>
 
-                        <!-- メールリンク（メインCTA） -->
-                        <a href="mailto:contact@sho-tsukamoto.jp"
-                            class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base md:text-lg transition-all duration-200 shadow-lg shadow-blue-900/30 hover:shadow-blue-800/50 hover:-translate-y-0.5">
-                            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            contact@sho-tsukamoto.jp
-                        </a>
+                        <!-- 送信完了メッセージ -->
+                        <div x-show="submitted" x-collapse style="display: none;" class="mb-6 p-6 rounded-xl bg-blue-900/20 border border-blue-500/40 text-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-3 text-xl">
+                                ✓
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">送信が完了いたしました</h4>
+                            <p class="text-xs text-zinc-300 leading-relaxed mb-4" x-text="serverMessage"></p>
+                            <button @click="resetForm()" class="text-xs text-blue-400 hover:text-blue-300 underline font-semibold">
+                                別の内容を送信する
+                            </button>
+                        </div>
 
-                        <p class="mt-4 text-xs text-zinc-600">クリックしてメーラーを開く</p>
+                        <!-- お問い合わせフォーム -->
+                        <form x-show="!submitted" @submit.prevent="submitForm()" class="space-y-5">
+                            <!-- ハニーポット（スパム用隠しフィールド） -->
+                            <input type="text" name="hp_website" x-model="formData.hp_website" style="display: none;" tabindex="-1" autocomplete="off">
+
+                            <!-- エラー表示 -->
+                            <div x-show="errorMessage" x-collapse style="display: none;" class="p-4 rounded-lg bg-red-900/30 border border-red-500/40 text-red-300 text-xs">
+                                <span x-text="errorMessage"></span>
+                            </div>
+
+                            <!-- お名前 -->
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-300 mb-1.5" for="contact-name">
+                                    お名前 <span class="text-red-400">*</span>
+                                </label>
+                                <input type="text" id="contact-name" x-model="formData.name" required
+                                    placeholder="例）山田 太郎"
+                                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200">
+                            </div>
+
+                            <!-- メールアドレス -->
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-300 mb-1.5" for="contact-email">
+                                    メールアドレス <span class="text-red-400">*</span>
+                                </label>
+                                <input type="email" id="contact-email" x-model="formData.email" required
+                                    placeholder="例）yourname@example.com"
+                                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200">
+                            </div>
+
+                            <!-- 種別 -->
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-300 mb-1.5" for="contact-type">
+                                    お問い合わせ種別
+                                </label>
+                                <select id="contact-type" x-model="formData.type"
+                                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200">
+                                    <option value="採用・転職のご相談">🤝 採用・転職のご相談</option>
+                                    <option value="Webシステム・アプリ開発のご依頼">💻 Webシステム・アプリ開発のご依頼</option>
+                                    <option value="副業・業務委託のご相談">⚡ 副業・業務委託のご相談</option>
+                                    <option value="その他">💬 その他のお問い合わせ</option>
+                                </select>
+                            </div>
+
+                            <!-- メッセージ内容 -->
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-300 mb-1.5" for="contact-message">
+                                    お問い合わせ内容 <span class="text-red-400">*</span>
+                                </label>
+                                <textarea id="contact-message" x-model="formData.message" required rows="5"
+                                    placeholder="お問い合わせ内容をご記入ください。"
+                                    class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200 leading-relaxed"></textarea>
+                            </div>
+
+                            <!-- Cloudflare Turnstile ウィジェット -->
+                            <div class="py-2">
+                                <!-- TODO: 本番サイトキーを取得した際はこちらの data-sitekey を差し替えてください -->
+                                <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
+                            </div>
+
+                            <!-- 送信ボタン -->
+                            <button type="submit" :disabled="loading"
+                                class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-bold text-sm tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 cursor-pointer">
+                                <template x-if="!loading">
+                                    <span class="flex items-center gap-2">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                                        </svg>
+                                        送信する
+                                    </span>
+                                </template>
+                                <template x-if="loading">
+                                    <span class="flex items-center gap-2">
+                                        <svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        送信中...
+                                    </span>
+                                </template>
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -68,3 +150,74 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('alpine:init', () => {
+    Alpine.data('contactForm', () => ({
+        formData: {
+            name: '',
+            email: '',
+            type: '採用・転職のご相談',
+            message: '',
+            hp_website: ''
+        },
+        loading: false,
+        submitted: false,
+        errorMessage: '',
+        serverMessage: '',
+
+        async submitForm() {
+            this.loading = true;
+            this.errorMessage = '';
+
+            // Turnstile トークンの取得
+            const turnstileInput = document.querySelector('[name="cf-turnstile-response"]');
+            const token = turnstileInput ? turnstileInput.value : '';
+
+            try {
+                const response = await fetch('/api/contact.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ...this.formData,
+                        cf_turnstile_response: token
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    this.submitted = true;
+                    this.serverMessage = result.message || '送信が完了しました。';
+                } else {
+                    this.errorMessage = result.message || '送信に失敗しました。時間をおいて再度お試しください。';
+                }
+            } catch (err) {
+                console.error('Contact Form Error:', err);
+                this.errorMessage = '通信エラーが発生しました。インターネット接続をご確認の上、直接 contact@sho-tsukamoto.jp へメールでお問い合わせください。';
+            } finally {
+                this.loading = false;
+            }
+        },
+
+        resetForm() {
+            this.formData = {
+                name: '',
+                email: '',
+                type: '採用・転職のご相談',
+                message: '',
+                hp_website: ''
+            };
+            this.submitted = false;
+            this.errorMessage = '';
+            this.serverMessage = '';
+            if (window.turnstile) {
+                window.turnstile.reset();
+            }
+        }
+    }));
+});
+</script>
