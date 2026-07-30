@@ -75,7 +75,6 @@ function init() {
         // タイトル（Sho Tsukamoto）のアニメーション完了後にサブタイトルとスクロールを表示
         const subtitle = document.querySelector('.hero-subtitle');
         const scrollIndicator = document.querySelector('.scroll-indicator');
-        const heroBadges = document.querySelector('.hero-badges');
         
         setTimeout(() => {
             if (subtitle) {
@@ -86,13 +85,6 @@ function init() {
                 scrollIndicator.classList.remove('opacity-0');
                 scrollIndicator.classList.add('opacity-100');
             }
-            // バッジをサブタイトルより少し遅らせてフェードイン
-            setTimeout(() => {
-                if (heroBadges) {
-                    heroBadges.classList.remove('opacity-0', 'translate-y-2');
-                    heroBadges.classList.add('opacity-100', 'translate-y-0');
-                }
-            }, 300);
         }, 800);
     }, TIMEOUT);
 

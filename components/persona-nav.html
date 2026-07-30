@@ -1,0 +1,95 @@
+<section id="persona-nav" class="px-4 py-10 bg-zinc-950 border-b border-zinc-800/60 md:px-0">
+    <div class="mx-auto max-w-screen-lg">
+        <p class="text-center text-zinc-600 text-[10px] uppercase tracking-[0.2em] mb-6 font-semibold">
+            あなたの状況に合わせてご覧ください
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+
+            <!-- 採用担当 / HR -->
+            <div class="group relative p-5 rounded-2xl border border-zinc-800 bg-zinc-900/20 hover:bg-zinc-900/60 hover:border-zinc-600 transition-all duration-300 cursor-pointer"
+                onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-lg"
+                        style="background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2);">
+                        👔
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-sm font-bold text-white mb-1">採用担当・HR の方</h3>
+                        <ul class="space-y-0.5 text-xs text-zinc-500">
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-blue-600">→</span> 職歴・学歴タイムライン
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-blue-600">→</span> マネジメント・組織経験
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <a href="https://hackmd.io/@sho-tsukamoto/CV" target="_blank" rel="noopener"
+                                    class="text-blue-500 hover:text-blue-400 transition-colors"
+                                    onclick="event.stopPropagation()">
+                                    → 職務経歴書（CV）を開く ↗
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技術担当 / エンジニア -->
+            <div class="group relative p-5 rounded-2xl border border-zinc-800 bg-zinc-900/20 hover:bg-zinc-900/60 hover:border-zinc-600 transition-all duration-300 cursor-pointer"
+                onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-lg"
+                        style="background: rgba(120,80,255,0.1); border: 1px solid rgba(120,80,255,0.2);">
+                        💻
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-sm font-bold text-white mb-1">技術担当・エンジニアの方</h3>
+                        <ul class="space-y-0.5 text-xs text-zinc-500">
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-violet-500">→</span> 技術スタック詳細
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-violet-500">→</span> 実績プロジェクト
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <a href="https://github.com/shoppie70" target="_blank" rel="noopener"
+                                    class="text-violet-400 hover:text-violet-300 transition-colors"
+                                    onclick="event.stopPropagation()">
+                                    → GitHub を確認する ↗
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- クライアント / 発注担当 -->
+            <div class="group relative p-5 rounded-2xl border border-zinc-800 bg-zinc-900/20 hover:bg-zinc-900/60 hover:border-zinc-600 transition-all duration-300 cursor-pointer"
+                onclick="document.getElementById('works').scrollIntoView({behavior:'smooth'})">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-lg"
+                        style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+                        🏢
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-sm font-bold text-white mb-1">開発依頼・発注をお考えの方</h3>
+                        <ul class="space-y-0.5 text-xs text-zinc-500">
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-green-600">→</span> 実績プロジェクト一覧
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-green-600">→</span> 副業・業務委託 応相談
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="text-green-500 cursor-pointer"
+                                    onclick="event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                                    → お問い合わせへ
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
