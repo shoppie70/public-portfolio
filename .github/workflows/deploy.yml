@@ -16,10 +16,10 @@ jobs:
       - name: 🚚 最新コードの取得
         uses: actions/checkout@v4
 
-      - name: 🔧 Node.js 20.x のセットアップ
+      - name: 🔧 Node.js 22.x のセットアップ
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: 📦 依存パッケージのインストール
@@ -28,12 +28,22 @@ jobs:
       - name: 🏗️ 静的ファイルのビルド
         run: npm run build
 
+      - name: ⚙️ サーバーディレクトリパスの自動調整（末尾スラッシュ補正）
+        run: |
+          DIR="${{ secrets.FTP_SERVER_DIR }}"
+          if [ -z "$DIR" ]; then
+            DIR="/"
+          elif [[ "$DIR" != */ ]]; then
+            DIR="${DIR}/"
+          fi
+          echo "SERVER_DIR=${DIR}" >> $GITHUB_ENV
+
       - name: 📂 FTPによるスターサーバーへの同期アップロード
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR || '/' }}
+          server-dir: ${{ env.SERVER_DIR }}
           local-dir: ./dist/
           dangerous-clean-slate: false
