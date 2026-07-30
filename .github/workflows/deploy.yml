@@ -28,6 +28,13 @@ jobs:
       - name: 🏗️ 静的ファイルのビルド
         run: npm run build
 
+      - name: 🔑 本番用 .env ファイルの自動生成
+        run: |
+          cat << EOF > ./dist/api/.env
+          TURNSTILE_SECRET=${{ secrets.TURNSTILE_SECRET }}
+          ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL || 'contact@sho-tsukamoto.jp' }}
+          EOF
+
       - name: ⚙️ サーバーディレクトリパスの自動調整（末尾スラッシュ補正）
         run: |
           DIR="${{ secrets.FTP_SERVER_DIR }}"
