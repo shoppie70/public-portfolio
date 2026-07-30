@@ -28,6 +28,7 @@ jobs:
       - name: 🏗️ 静的ファイルのビルド
         run: npm run build
 
+      # GitHub Secrets の TURNSTILE_SECRET から本番用 .env を自動生成
       - name: 🔑 本番用 .env ファイルの自動生成
         run: |
           cat << EOF > ./dist/api/.env
