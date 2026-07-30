@@ -129,10 +129,32 @@ if (!$verifyData || empty($verifyData['success']) || $verifyData['success'] !== 
 }
 
 // -------------------------------------------------------------------
-// メール送信処理
+// メール送信ヘルパー関数 (確実な UTF-8 送信)
 // -------------------------------------------------------------------
-mb_language('japanese');
-mb_internal_encoding('UTF-8');
+function sendUtf8Mail($to, $subject, $body, $from, $replyTo = null) {
+    mb_language('uni');
+    mb_internal_encoding('UTF-8');
+
+    $encodedSubject = mb_encode_mimeheader($subject, 'UTF-8', 'B', "\r\n");
+
+    $headers = [];
+    $headers[] = 'From: ' . $from;
+    if ($replyTo) {
+        $headers[] = 'Reply-To: ' . $replyTo;
+    }
+    $headers[] = 'MIME-Version: 1.0';
+    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+    $headers[] = 'Content-Transfer-Encoding: 8bit';
+    $headers[] = 'X-Mailer: PHP/' . phpversion();
+
+    return mail($to, $encodedSubject, $body, implode("\r\n", $headers));
+}
+
+// -------------------------------------------------------------------
+// メール本文作成 & 送信
+// -------------------------------------------------------------------
+$now = date('Y-m-d H:i:s');
+$clientIp = $_SERVER['REMOTE_ADDR'] ?? '不明';
 
 // 1. 管理者宛メール通知
 $adminSubject = "【ポートフォリオお問い合わせ】{$name}様より ({$type})";
@@ -152,18 +174,11 @@ $adminBody = <<<EOD
 {$message}
 
 --------------------------------------------------
-送信日時: " . date('Y-m-d H:i:s') . "
-送信元IP: {$_SERVER['REMOTE_ADDR']}
+送信日時: {$now}
+送信元IP: {$clientIp}
 EOD;
 
-$adminHeaders = [
-    'From' => 'no-reply@sho-tsukamoto.jp',
-    'Reply-To' => $email,
-    'X-Mailer' => 'PHP/' . phpversion(),
-    'Content-Type' => 'text/plain; charset=UTF-8'
-];
-
-$mailSent = mb_send_mail(ADMIN_EMAIL, $adminSubject, $adminBody, $adminHeaders);
+$mailSent = sendUtf8Mail(ADMIN_EMAIL, $adminSubject, $adminBody, 'no-reply@sho-tsukamoto.jp', $email);
 
 // 2. 自動返信メール (ユーザー宛)
 $userSubject = "【自動送信】お問い合わせを受け付けました | " . SITE_NAME;
@@ -192,13 +207,7 @@ Web: https://sho-tsukamoto.jp
 --------------------------------------------------
 EOD;
 
-$userHeaders = [
-    'From' => 'contact@sho-tsukamoto.jp',
-    'X-Mailer' => 'PHP/' . phpversion(),
-    'Content-Type' => 'text/plain; charset=UTF-8'
-];
-
-@mb_send_mail($email, $userSubject, $userBody, $userHeaders);
+sendUtf8Mail($email, $userSubject, $userBody, 'contact@sho-tsukamoto.jp');
 
 if ($mailSent) {
     echo json_encode(['success' => true, 'message' => 'お問い合わせを送信しました。自動返信メールをご確認ください。']);
