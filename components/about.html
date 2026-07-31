@@ -1,4 +1,5 @@
-<section id="about" class="relative px-4 py-12 bg-zinc-900/60 border-y border-zinc-800 md:px-0 md:py-32 overflow-hidden">
+<section id="about"
+    class="relative px-4 py-12 bg-zinc-900/60 border-y border-zinc-800 md:px-0 md:py-32 overflow-hidden">
     <!-- 背景アンビエントライト（洗練されたグラデーション装飾） -->
     <div class="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -6,27 +7,16 @@
     <div class="relative mx-auto max-w-screen-lg">
         <!-- セクションヘッダー -->
         <div class="mb-10 md:mb-16">
-            <div class="wow animate__ animate__fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                    <p class="text-xs font-mono tracking-widest uppercase font-semibold text-blue-400">CORE VALUE & PROFILE</p>
-                </div>
+            <div class="wow animate__ animate__fadeInUp animated"
+                style="visibility: visible; animation-name: fadeInUp;">
                 <h2 class="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-wider font-heading mb-3">
                     ABOUT ME
                 </h2>
-                <div class="h-1 w-12 bg-blue-600 mb-6"></div>
-                
-                <!-- 統合したメインコアバリューコピー -->
-                <div class="p-4 sm:p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 backdrop-blur-sm">
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-heading tracking-tight leading-snug mb-3">
-                        ビジネスを動かす、総合力を持ったエンジニア
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20 text-xs font-medium">一気通貫開発 (企画〜インフラ)</span>
-                        <span class="px-3 py-1 rounded-md bg-violet-500/10 text-violet-300 border border-violet-500/20 text-xs font-medium">高専仕込みのフルスタック</span>
-                        <span class="px-3 py-1 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20 text-xs font-semibold">★ 入社1年・最年少チーフ昇格</span>
-                    </div>
-                </div>
+                <div class="h-1 w-12 bg-blue-600 mb-12"></div>
+                <h3
+                    class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white font-heading tracking-tight leading-snug">
+                    "ビジネスを動かす、総合力を持ったエンジニア"
+                </h3>
             </div>
         </div>
 
@@ -36,8 +26,11 @@
             <div class="w-full md:w-4/12 mb-8 md:mb-0">
                 <figure class="relative group">
                     <!-- 写真背後のアンビエントグロー -->
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600/30 to-violet-600/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-500"></div>
-                    <img loading="lazy" decoding="async" class="relative mx-auto w-full rounded-2xl shadow-2xl border border-zinc-700 transition-all duration-300 group-hover:scale-[1.01] group-hover:border-blue-500/50"
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-600/30 to-violet-600/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-500">
+                    </div>
+                    <img loading="lazy" decoding="async"
+                        class="relative mx-auto w-full rounded-2xl shadow-2xl border border-zinc-700 transition-all duration-300 group-hover:scale-[1.01] group-hover:border-blue-500/50"
                         src="./assets/images/my_profile-680b23cb.jpg" alt="塚本翔 プロフィール写真">
                     <div
                         class="absolute inset-0 rounded-2xl bg-gradient-to-t from-zinc-950/40 to-transparent pointer-events-none">
@@ -73,27 +66,36 @@
                                 <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
                                     :class="open === 1 ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'bg-zinc-800/60 text-blue-400 border border-zinc-700/50'">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 7h4M7 10v4M17 10v4M10 17h4"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                                            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                                            d="M10 7h4M7 10v4M17 10v4M10 17h4" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="flex items-center gap-2 mb-0.5">
-                                        <span class="text-[11px] font-mono font-semibold tracking-wider text-blue-400 uppercase">STRENGTH 01</span>
+                                        <span
+                                            class="text-[11px] font-mono font-semibold tracking-wider text-blue-400 uppercase">STRENGTH
+                                            01</span>
                                     </div>
-                                    <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition-colors">打ち合わせ〜リリースまで一気通貫</h4>
+                                    <h4
+                                        class="text-base font-bold text-white group-hover:text-blue-300 transition-colors">
+                                        打ち合わせ〜リリースまで一気通貫</h4>
                                 </div>
                             </div>
                             <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-zinc-800/40 border border-zinc-700/40 text-zinc-400 transition-transform duration-300"
                                 :class="open === 1 ? 'rotate-180 bg-blue-500/20 text-blue-400 border-blue-500/30' : ''">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </button>
                         <div x-show="open === 1" x-collapse class="px-5 pb-5">
-                            <p class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
-                                単なるコード実装にとどまらず、打ち合わせ、要件定義、データベース設計、インフラ構築、フロントエンド・バックエンド開発に至るまで<strong class="text-white font-semibold">"一気通貫で対応できること"</strong>が最大の強みです。また、第二種電気工事士などの国家資格を有し、強電・弱電工事、LAN構築といったリアルなネットワークインフラ整備もこなせる多才なスキルセットを持っています。
+                            <p
+                                class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
+                                単なるコード実装にとどまらず、打ち合わせ、要件定義、データベース設計、インフラ構築、フロントエンド・バックエンド開発に至るまで<strong
+                                    class="text-white font-semibold">"一気通貫で対応できること"</strong>が最大の強みです。また、第二種電気工事士などの国家資格を有し、強電・弱電工事、LAN構築といったリアルなネットワークインフラ整備もこなせる多才なスキルセットを持っています。
                             </p>
                         </div>
                     </div>
@@ -108,25 +110,32 @@
                                 <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
                                     :class="open === 2 ? 'bg-violet-500/20 text-violet-400 border border-violet-500/30' : 'bg-zinc-800/60 text-violet-400 border border-zinc-700/50'">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="flex items-center gap-2 mb-0.5">
-                                        <span class="text-[11px] font-mono font-semibold tracking-wider text-violet-400 uppercase">STRENGTH 02</span>
+                                        <span
+                                            class="text-[11px] font-mono font-semibold tracking-wider text-violet-400 uppercase">STRENGTH
+                                            02</span>
                                     </div>
-                                    <h4 class="text-base font-bold text-white group-hover:text-violet-300 transition-colors">高専仕込みのフルスタック技術力</h4>
+                                    <h4
+                                        class="text-base font-bold text-white group-hover:text-violet-300 transition-colors">
+                                        高専仕込みのフルスタック技術力</h4>
                                 </div>
                             </div>
                             <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-zinc-800/40 border border-zinc-700/40 text-zinc-400 transition-transform duration-300"
                                 :class="open === 2 ? 'rotate-180 bg-violet-500/20 text-violet-400 border-violet-500/30' : ''">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </button>
                         <div x-show="open === 2" x-collapse class="px-5 pb-5">
-                            <p class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
+                            <p
+                                class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
                                 幼少期からコンピュータや工学に興味があり、Webエンジニアとして活動。特にPHPとLaravelを得意とし、フルスクラッチ開発から大規模システム設計まで幅広く対応可能です。高専時代に培ったハードウェアからソフトウェアまで網羅する総合的な技術者としてのベースが、今の一気通貫対応力の土台です。
                             </p>
                         </div>
@@ -142,26 +151,34 @@
                                 <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
                                     :class="open === 3 ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-zinc-800/60 text-amber-400 border border-zinc-700/50'">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="flex items-center gap-2 mb-0.5">
-                                        <span class="text-[11px] font-mono font-semibold tracking-wider text-amber-400 uppercase">STRENGTH 03</span>
+                                        <span
+                                            class="text-[11px] font-mono font-semibold tracking-wider text-amber-400 uppercase">STRENGTH
+                                            03</span>
                                     </div>
-                                    <h4 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">社内最年少・入社1年でチーフエンジニアへ昇格</h4>
+                                    <h4
+                                        class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                                        社内最年少・入社1年でチーフエンジニアへ昇格</h4>
                                 </div>
                             </div>
                             <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-zinc-800/40 border border-zinc-700/40 text-zinc-400 transition-transform duration-300"
                                 :class="open === 3 ? 'rotate-180 bg-amber-500/20 text-amber-400 border-amber-500/30' : ''">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
                         </button>
                         <div x-show="open === 3" x-collapse class="px-5 pb-5">
-                            <p class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
-                                現在は株式会社ハジメクリエイトの<strong class="text-white font-semibold">"チーフエンジニア"</strong>として、自社システム開発の統括、採用活動、人事評価など、組織の成長を支える中枢業務も広く担っています。入社わずか1年で社内最年少での昇格を果たしました。
+                            <p
+                                class="text-sm text-zinc-300 leading-relaxed border-t border-zinc-800/80 pt-4 font-normal">
+                                現在は株式会社ハジメクリエイトの<strong
+                                    class="text-white font-semibold">"チーフエンジニア"</strong>として、自社システム開発の統括、採用活動、人事評価など、組織の成長を支える中枢業務も広く担っています。入社わずか1年で社内最年少での昇格を果たしました。
                             </p>
                         </div>
                     </div>
