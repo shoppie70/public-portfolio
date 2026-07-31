@@ -1,12 +1,12 @@
-<section id="core-value" class="relative px-4 py-12 bg-zinc-950 md:px-0 md:py-32 overflow-hidden">
-    <!-- 背景アンビエントライト（洗練されたグラデーション装飾） -->
+<section id="core-value" class="relative px-4 py-12 bg-zinc-950 md:px-0 md:py-28 overflow-hidden">
+    <!-- 背景アンビエントグラデーション -->
     <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="relative mx-auto max-w-screen-lg">
-        <div class="mb-10 md:mb-16">
-            <div class="wow animate__ animate__fadeInUp animated"
-                style="visibility: visible; animation-name: fadeInUp;">
+        <!-- セクションヘッダー -->
+        <div class="mb-10 md:mb-14">
+            <div class="wow animate__ animate__fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                 <h2 class="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-wider font-heading">
                     CORE VALUE
                 </h2>
@@ -14,64 +14,88 @@
             </div>
         </div>
 
-        <div class="wow animate__ animate__fadeInUp animated"
-            style="visibility: visible; animation-name: fadeInUp;">
-
-            <!-- 詳細カード -->
-            <div class="p-8 md:p-12 overflow-hidden relative bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-2xl">
-                <!-- 装飾背景グラデーション -->
-                <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-violet-500/10 blur-3xl pointer-events-none"></div>
-
-                <div class="relative">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                        <p class="text-[11px] font-mono tracking-widest uppercase font-semibold text-blue-400">コアバリュー / CORE VALUE</p>
+        <div class="wow animate__ animate__fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+            
+            <!-- メインカード -->
+            <div class="p-6 sm:p-10 md:p-12 relative bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-2xl">
+                
+                <!-- ヘッダーコピー & ハイライトタグ -->
+                <div class="mb-8 pb-6 border-b border-zinc-800/80">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        <p class="text-xs font-mono tracking-widest uppercase font-semibold text-blue-400">WHAT DRIVES ME</p>
                     </div>
-                    
-                    <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-8 font-heading tracking-tight leading-tight">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight leading-snug">
                         ビジネスを動かす、総合力を持ったエンジニア
                     </h3>
+                </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-zinc-800/80">
-                        <!-- Column 1: 技術的網羅性 -->
-                        <div class="group p-6 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-blue-500/40 hover:bg-zinc-900/40 transition-all duration-300">
-                            <div class="flex items-center gap-3.5 mb-4">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] font-mono text-blue-400 font-semibold tracking-wider block">VALUE 01</span>
-                                    <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition-colors">技術的網羅性と最適解の導出</h4>
+                <!-- 2つの価値提案（スキャナブル・ハイライト型） -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Core Value 01: 技術力 -->
+                    <div class="p-6 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] font-mono text-blue-400 font-semibold tracking-wider block">VALUE 01</span>
+                                        <h4 class="text-lg font-bold text-white">技術的網羅性と最適解の導出</h4>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="text-sm text-zinc-300 leading-relaxed font-normal">
-                                開発の原点にあるのは、高専時代に培った「ハードウェアからソフトウェアまで網羅する総合的なコンピュータ技術者」のベースです。しかし、私の強みは単にコードを書くことだけに偏重しません。
-                            </p>
-                        </div>
 
-                        <!-- Column 2: ビジネス推進力 -->
-                        <div class="group p-6 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-violet-500/40 hover:bg-zinc-900/40 transition-all duration-300">
-                            <div class="flex items-center gap-3.5 mb-4">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] font-mono text-violet-400 font-semibold tracking-wider block">VALUE 02</span>
-                                    <h4 class="text-base font-bold text-white group-hover:text-violet-300 transition-colors">ビジネスを牽引する推進力</h4>
-                                </div>
+                            <!-- ハイライトキーワードタグ -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/20 text-xs font-medium">高専工学ベース</span>
+                                <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/60 text-xs font-medium">ハード〜Webまで網羅</span>
+                                <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/60 text-xs font-medium">コード超の総合提案</span>
                             </div>
+
                             <p class="text-sm text-zinc-300 leading-relaxed font-normal">
-                                コミュニケーション能力と顧客折衝能力を活かし、プロジェクトマネージャーとしてビジネスの要件を定義し、プロジェクトを成功へと牽引することができます。技術的な最適解を導き出しながら、顧客やチームと深く並走し、ビジネス全体を動かす推進力を評価され、現職では入社わずか1年、<strong class="text-white font-semibold">"社内最年少"</strong>でのチーフエンジニア昇格を果たしました。
+                                高専時代に培ったコンピュータ技術全般の基礎力を基盤に、単なるコード記述にとどまらずインフラからソフト領域まで最適な技術解を導き出します。
                             </p>
                         </div>
                     </div>
+
+                    <!-- Core Value 02: ビジネス推進力 -->
+                    <div class="p-6 rounded-xl bg-zinc-950/60 border border-zinc-800/80 hover:border-violet-500/50 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] font-mono text-violet-400 font-semibold tracking-wider block">VALUE 02</span>
+                                        <h4 class="text-lg font-bold text-white">ビジネスを牽引する推進力</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ハイライトキーワードタグ / メトリクス -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/20 text-xs font-semibold">★ 入社1年で昇格</span>
+                                <span class="px-2.5 py-1 rounded-md bg-violet-500/10 text-violet-300 border border-violet-500/20 text-xs font-medium">社内最年少チーフ</span>
+                                <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/60 text-xs font-medium">PM / 顧客折衝力</span>
+                            </div>
+
+                            <p class="text-sm text-zinc-300 leading-relaxed font-normal">
+                                顧客折衝とPMスキルで要件を成功へと牽引。開発にとどまらないビジネス成果と推進力を評価され、入社わずか1年・最年少でチーフエンジニアに昇格。
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
