@@ -1,8 +1,17 @@
-<section id="skills" class="px-4 py-12 bg-zinc-900/60 border-y border-zinc-800 md:px-0 md:py-32">
-    <div class="mx-auto w-full max-w-screen-lg">
+<section id="skills" class="relative px-4 py-12 bg-zinc-900/60 border-y border-zinc-800 md:px-0 md:py-32 overflow-hidden">
+    <!-- 背景アンビエントグラデーション -->
+    <div class="absolute top-1/3 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/3 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative mx-auto w-full max-w-screen-lg">
+        <!-- セクションヘッダー -->
         <div class="mb-10 md:mb-16">
             <div class="wow animate__ animate__fadeInUp animated"
                 style="visibility: visible; animation-name: fadeInUp;">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    <p class="text-xs font-mono tracking-widest uppercase font-semibold text-blue-400">02 / EXPERTISE</p>
+                </div>
                 <h2 class="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-wider font-heading">
                     SKILLS
                 </h2>
@@ -13,129 +22,144 @@
         <!-- タブ切り替えUI -->
         <div x-data="{ tab: 'ai' }">
 
-            <!-- タブ指示ラベル -->
-            <p class="text-xs text-zinc-500 font-semibold mb-3 tracking-wider flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
-                </svg>
-                タブを選択してカテゴリを切り替え：
-            </p>
-
-            <!-- タブナビゲーション（高視認性グリッドUI） -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3 mb-8 p-1.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/80">
-                <!-- AI/マネジメント -->
+            <!-- タブナビゲーション（高品位ガラスモルフィズムグリッドUI） -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3 mb-8 p-1.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md">
+                <!-- AI / マネジメント -->
                 <button @click="tab = 'ai'"
-                    :class="tab === 'ai' ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40 border-blue-500' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900 hover:text-zinc-200'"
-                    class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-200 cursor-pointer">
-                    <span class="text-base">🤖</span>
+                    :class="tab === 'ai' ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 border-blue-400/30' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900/80 hover:text-zinc-200'"
+                    class="flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-300 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
                     <span>AI / マネジメント</span>
                 </button>
 
                 <!-- Backend -->
                 <button @click="tab = 'backend'"
-                    :class="tab === 'backend' ? 'bg-green-600 text-white shadow-lg shadow-green-900/40 border-green-500' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900 hover:text-zinc-200'"
-                    class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-200 cursor-pointer">
-                    <span class="text-base">⚙️</span>
+                    :class="tab === 'backend' ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-600/25 border-emerald-400/30' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900/80 hover:text-zinc-200'"
+                    class="flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-300 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/>
+                    </svg>
                     <span>Backend</span>
                 </button>
 
-                <!-- Frontend -->
+                <!-- Frontend & Mobile -->
                 <button @click="tab = 'frontend'"
-                    :class="tab === 'frontend' ? 'bg-purple-600 text-white shadow-lg shadow-purple-900/40 border-purple-500' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900 hover:text-zinc-200'"
-                    class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-200 cursor-pointer">
-                    <span class="text-base">💻</span>
+                    :class="tab === 'frontend' ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white shadow-lg shadow-purple-600/25 border-purple-400/30' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900/80 hover:text-zinc-200'"
+                    class="flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-300 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
                     <span>Frontend &amp; Mobile</span>
                 </button>
 
                 <!-- その他 -->
                 <button @click="tab = 'other'"
-                    :class="tab === 'other' ? 'bg-orange-600 text-white shadow-lg shadow-orange-900/40 border-orange-500' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900 hover:text-zinc-200'"
-                    class="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-200 cursor-pointer">
-                    <span class="text-base">🛠️</span>
+                    :class="tab === 'other' ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-amber-600/25 border-amber-400/30' : 'bg-zinc-900/40 text-zinc-400 border-transparent hover:bg-zinc-900/80 hover:text-zinc-200'"
+                    class="flex items-center justify-center gap-2.5 px-4 py-3.5 rounded-xl text-xs md:text-sm font-bold border transition-all duration-300 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
                     <span>その他</span>
                 </button>
             </div>
 
             <!-- ====== AI / マネジメント ====== -->
-            <div x-show="tab === 'ai'" x-transition:enter="transition ease-out duration-200"
+            <div x-show="tab === 'ai'" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="p-6 md:p-8 bg-zinc-900/40 rounded-2xl border border-zinc-800">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                            style="background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2);">
-                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                <div class="p-6 md:p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
                                     d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                         </div>
                         <div>
-                            <p class="text-[10px] tracking-wider uppercase font-semibold text-blue-500">主要スキル</p>
-                            <h3 class="text-xl font-bold text-white">AI駆動開発 &amp; 上流工程・ディレクション</h3>
+                            <p class="text-[10px] font-mono tracking-widest uppercase font-semibold text-blue-400">CORE FOCUS</p>
+                            <h3 class="text-xl md:text-2xl font-extrabold text-white">AI駆動開発 &amp; 上流工程・ディレクション</h3>
                         </div>
                     </div>
 
-                    <p class="text-sm text-zinc-400 leading-relaxed mb-8 max-w-2xl">
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-8 max-w-3xl font-normal">
                         生成AIの台頭により、私の主たる職務は「コードを書く」から「コンテキストを設計し、AIと人間のチームをオーケストレートする」へとシフトしました。顧客の課題を仕様に落とし、最速でプロダクトをビジネス価値へと変えることがコアバリューです。
                     </p>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/30">
-                            <h4 class="text-sm font-semibold text-white mb-1">顧客折衝 &amp; 意思決定</h4>
-                            <p class="text-xs text-zinc-500">顧客の潜在ニーズを言語化し、ビジネスゴールから逆算したシステム仕様の策定</p>
+                        <div class="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-blue-500/40 transition-all duration-300">
+                            <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                顧客折衝 &amp; 意思決定
+                            </h4>
+                            <p class="text-xs text-zinc-400 leading-relaxed">顧客の潜在ニーズを言語化し、ビジネスゴールから逆算したシステム仕様の策定</p>
                         </div>
-                        <div class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/30">
-                            <h4 class="text-sm font-semibold text-white mb-1">AI駆動開発ディレクション</h4>
-                            <p class="text-xs text-zinc-500">LLM/AIエージェントを最大限にスケールさせる文脈設計とプロンプト制御</p>
+                        <div class="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-blue-500/40 transition-all duration-300">
+                            <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                AI駆動開発ディレクション
+                            </h4>
+                            <p class="text-xs text-zinc-400 leading-relaxed">LLM/AIエージェントを最大限にスケールさせる文脈設計とプロンプト制御</p>
                         </div>
-                        <div class="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/30">
-                            <h4 class="text-sm font-semibold text-white mb-1">チームマネジメント</h4>
-                            <p class="text-xs text-zinc-500">後輩への的確なタスク切り出し、技術的ディレクション、コードレビューによる品質担保</p>
+                        <div class="p-5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 hover:border-blue-500/40 transition-all duration-300">
+                            <h4 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                チームマネジメント
+                            </h4>
+                            <p class="text-xs text-zinc-400 leading-relaxed">後輩への的確なタスク切り出し、技術的ディレクション、コードレビューによる品質担保</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- ====== Backend ====== -->
-            <div x-show="tab === 'backend'" x-transition:enter="transition ease-out duration-200"
+            <div x-show="tab === 'backend'" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="p-6 md:p-8 bg-zinc-900/40 rounded-2xl border border-zinc-800">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                            style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
-                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
-                            </svg>
+                <div class="p-6 md:p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center justify-between flex-wrap gap-4 mb-6 pb-6 border-b border-zinc-800/80">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-mono tracking-widest uppercase font-semibold text-emerald-400">PROVEN EXPERTISE</p>
+                                <h3 class="text-xl md:text-2xl font-extrabold text-white">Backend Stack</h3>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-[10px] tracking-wider uppercase font-semibold text-green-400">Proven Expertise</p>
-                            <h3 class="text-xl font-bold text-white">Backend Stack</h3>
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>実務経験 <span data-experience-start="2019"></span>年+</span>
                         </div>
                     </div>
-                    <p class="text-sm text-zinc-400 mb-6">
+
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-6 font-normal">
                         Laravel を 2019年から業務で使用。PHP 5.2〜8.x を網羅。受託開発から自社システムまで、設計〜実装まで一気通貫で担当。
-                        <span class="text-green-400 font-semibold ml-1">実務経験 <span data-experience-start="2019"></span>年+</span>
                     </p>
-                    <div class="space-y-3">
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #2563eb; min-height: 40px;"></div>
+
+                    <div class="space-y-3.5">
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-emerald-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-emerald-500 to-teal-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">Laravel</h4>
-                                <p class="text-xs text-zinc-400">大規模システム開発における管理・フロント画面の分離およびモジュラモノリス設計</p>
+                                <h4 class="text-sm font-bold text-white mb-1">Laravel</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">大規模システム開発における管理・フロント画面の分離およびモジュラモノリス設計</p>
                             </div>
                         </div>
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #2563eb; min-height: 40px;"></div>
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-emerald-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-emerald-500 to-teal-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">WordPress</h4>
-                                <p class="text-xs text-zinc-400">MVC構造による洗練されたテーマ開発と、仕様変更に強い高速コーディング</p>
+                                <h4 class="text-sm font-bold text-white mb-1">WordPress</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">MVC構造による洗練されたテーマ開発と、仕様変更に強い高速コーディング</p>
                             </div>
                         </div>
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #2563eb; min-height: 40px;"></div>
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-emerald-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-emerald-500 to-teal-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">EC-CUBE &amp; Stripe</h4>
-                                <p class="text-xs text-zinc-400">カスタムプラグイン開発、柔軟なEC構築および複雑な決済連携実装</p>
+                                <h4 class="text-sm font-bold text-white mb-1">EC-CUBE &amp; Stripe</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">カスタムプラグイン開発、柔軟なEC構築および複雑な決済連携実装</p>
                             </div>
                         </div>
                     </div>
@@ -143,45 +167,46 @@
             </div>
 
             <!-- ====== Frontend & Mobile ====== -->
-            <div x-show="tab === 'frontend'" x-transition:enter="transition ease-out duration-200"
+            <div x-show="tab === 'frontend'" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="p-6 md:p-8 bg-zinc-900/40 rounded-2xl border border-zinc-800">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                            style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.2);">
-                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                <div class="p-6 md:p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-zinc-800/80">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
                                     d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
                         <div>
-                            <p class="text-[10px] tracking-wider uppercase font-semibold text-purple-400">Modern Implementations</p>
-                            <h3 class="text-xl font-bold text-white">Frontend &amp; Mobile Stack</h3>
+                            <p class="text-[10px] font-mono tracking-widest uppercase font-semibold text-purple-400">MODERN IMPLEMENTATIONS</p>
+                            <h3 class="text-xl md:text-2xl font-extrabold text-white">Frontend &amp; Mobile Stack</h3>
                         </div>
                     </div>
-                    <p class="text-sm text-zinc-400 mb-6">
+
+                    <p class="text-sm text-zinc-300 leading-relaxed mb-6 font-normal">
                         React によるSPA開発からReact Nativeのモバイルアプリまで、実務レベルで幅広く実装を主導。
                     </p>
-                    <div class="space-y-3">
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #a855f7; min-height: 40px;"></div>
+
+                    <div class="space-y-3.5">
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-purple-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-purple-500 to-violet-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">React (SPA)</h4>
-                                <p class="text-xs text-zinc-400">コンポーネント設計、状態管理、パフォーマンスチューニング。SPAのWebアプリ開発・リリース実績が豊富。</p>
+                                <h4 class="text-sm font-bold text-white mb-1">React (SPA)</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">コンポーネント設計、状態管理、パフォーマンスチューニング。SPAのWebアプリ開発・リリース実績が豊富。</p>
                             </div>
                         </div>
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #a855f7; min-height: 40px;"></div>
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-purple-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-purple-500 to-violet-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">React Native</h4>
-                                <p class="text-xs text-zinc-400">iOS/Android向けのデバイスネイティブ機能を最大限に活かしたモバイルアプリ構築。打ち合わせ〜リリースまで1人で一貫対応。</p>
+                                <h4 class="text-sm font-bold text-white mb-1">React Native</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">iOS/Android向けのデバイスネイティブ機能を最大限に活かしたモバイルアプリ構築。打ち合わせ〜リリースまで1人で一貫対応。</p>
                             </div>
                         </div>
-                        <div class="skill-row">
-                            <div class="w-1 h-full self-stretch flex-shrink-0 rounded-full" style="background: #a855f7; min-height: 40px;"></div>
+                        <div class="p-4 rounded-xl bg-zinc-950/50 border border-zinc-800/60 hover:border-purple-500/40 transition-all duration-300 flex items-start gap-4">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b from-purple-500 to-violet-500 flex-shrink-0 mt-0.5"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-white mb-0.5">HTML5 / CSS3 / JavaScript</h4>
-                                <p class="text-xs text-zinc-400">Tailwind CSS、BEM規則に基づくSCSS、Alpine.jsによる軽量でリッチな設計</p>
+                                <h4 class="text-sm font-bold text-white mb-1">HTML5 / CSS3 / JavaScript</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed">Tailwind CSS、BEM規則に基づくSCSS、Alpine.jsによる軽量でリッチな設計</p>
                             </div>
                         </div>
                     </div>
@@ -189,30 +214,29 @@
             </div>
 
             <!-- ====== その他 ====== -->
-            <div x-show="tab === 'other'" x-transition:enter="transition ease-out duration-200"
+            <div x-show="tab === 'other'" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="p-6 md:p-8 bg-zinc-900/40 rounded-2xl border border-zinc-800">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                            style="background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);">
-                            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                <div class="p-6 md:p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800/80 backdrop-blur-sm shadow-xl">
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-zinc-800/80">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
                                     d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
                         <div>
-                            <p class="text-[10px] tracking-wider uppercase font-semibold text-orange-400">Other Skills</p>
-                            <h3 class="text-xl font-bold text-white">その他スキル</h3>
+                            <p class="text-[10px] font-mono tracking-widest uppercase font-semibold text-amber-400">OTHER SKILLS</p>
+                            <h3 class="text-xl md:text-2xl font-extrabold text-white">その他スキル・インフラ</h3>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">Gitによるバージョン管理・チーム開発</span>
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">Linuxサーバー環境構築・運用知識</span>
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">LAN構築・ネットワーク設計・NAS構築</span>
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">PCハードウェア修理・SSD換装・復旧作業</span>
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">AI駆動開発 (LLM連携・開発効率化設計)</span>
-                        <span class="px-3 py-1.5 rounded-lg text-xs" style="background: rgba(255,255,255,0.04); color: #a1a1aa; border: 1px solid rgba(255,255,255,0.08);">Docker / 開発環境構築</span>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">Gitによるバージョン管理・チーム開発</span>
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">Linuxサーバー環境構築・運用知識</span>
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">LAN構築・ネットワーク設計・NAS構築</span>
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">PCハードウェア修理・SSD換装・復旧作業</span>
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">AI駆動開発 (LLM連携・開発効率化設計)</span>
+                        <span class="px-3.5 py-2 rounded-xl text-xs bg-zinc-950/60 text-zinc-300 border border-zinc-800 hover:border-amber-500/40 hover:text-white transition-all duration-200">Docker / 開発環境構築</span>
                     </div>
                 </div>
             </div>
