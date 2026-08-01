@@ -252,7 +252,7 @@
 
                     <!-- Modals (Separated from list to avoid container overflow / transform side-effects) -->
                     <div>
-<!-- Modal: instagram-generator - Instagram Graph API Token Generator -->
+                        <!-- Modal 1: Instagram Graph API Token Generator -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'instagram-generator'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -297,8 +297,97 @@
                                                 </a>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/instagram_site.jpg"
+                                            alt="Instagram Graph API Token Generator Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: zukimemo - ずきメモ -->
+                        <!-- Modal 2: ひまわり建宅 -->
+
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+                            x-show="activeProject === 'hoi-search'" x-transition.opacity.duration.300ms>
+                            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+                            <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+                                x-show="activeProject === 'hoi-search'"
+                                x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 scale-95"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-95">
+                                <button
+                                    class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                                    @click="activeProject = null">✕</button>
+                                <div class="mt-4 space-y-6">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                                            広島市保活支援検索ツール「ほいサーチ」
+                                        </h3>
+                                        <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                                            「自治体の複雑な公開情報を、ユーザー目線で徹底的に構造化」</p>
+                                        <div class="mb-4">
+                                            <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                                                href="https://hoi-search.pages.dev/hiroshima/naka/" target="_blank"
+                                                rel="noopener">
+                                                🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                                            </a>
+                                        </div>
+                                        <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                                            <p>
+                                                広島市の自治体公式データを活用し、スマートフォンでの閲覧ストレス解消と、保護者が本当に必要とする条件による高速絞り込みに特化させた保活支援Webアプリケーション。
+                                            </p>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                                                <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                                                    <li><strong>モバイル最適化と視認性改善:</strong>
+                                                        自治体公式の複雑な一覧表や大容量PDFが持つ「スマートフォンからでは著しく読みづらい」というペインを、レスポンシブなUI設計により根本から解消。
+                                                    </li>
+                                                    <li><strong>保護者ファーストのこだわり絞り込み:</strong>
+                                                        「おむつの園内処分可能か」「布団の持ち込み不要か」「駐車場の有無」など、従来の公開情報では埋もれがちだった保護者のコアな判断基準を1タップでサクサクフィルタリングできる検索ロジックを実装。
+                                                    </li>
+                                                    <li><strong>直感的な基本・延長保育時間の可視化:</strong>
+                                                        各施設の預かり時間をグラフィカルなタイムライン形式に落とし込み、複数施設の比較検討を直感的に行えるUXを追求。</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-bold text-white mb-1">技術的工夫・データの透明性:</h5>
+                                                <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                                                    <li><strong>公式ソースとの透過的連携:</strong>
+                                                        非公式ツールでありながら情報の正確性と信頼性を担保するため、元データである広島市公式のデータソースURLへダイレクトに遷移・確認できる透過的なリンク設計。
+                                                    </li>
+                                                    <li><strong>エッジホスティングによる超高速配信:</strong> インフラにCloudflare
+                                                        Pagesを採用。地域ごとに最適化されたデータを高速配信し、子育て中の慌ただしい時間でも一切の待ち時間を感じさせない高速なページ表示速度を実現。
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pt-4 border-t border-zinc-800">
+                                                <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                                                <div class="flex flex-wrap gap-2 mt-2">
+                                                    <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">HTML5 / CSS3</span>
+                                                    <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">JavaScript</span>
+                                                    <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                                                    <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Cloudflare Pages</span>
+                                                    <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Open Data Utilization</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/hoi_top.png"
+                                            alt="ほいサーチ スクリーンショット">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Modal 10: 岡山科学技術専門学校 授業資料 -->
+
+                        <!-- Modal 4: ずきメモ -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'zukimemo'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -368,8 +457,19 @@
                                                     <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/zukimemo.png"
+                                            alt="ずきメモ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: himaken - ひまわり建宅 -->
+                        <!-- Modal 5: シオヨミ -->
+
+                        <!-- Modal 2: ひまわり建宅 -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'himaken'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -407,8 +507,17 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/himaken.jpg"
+                                            alt="ひまわり建宅 Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: oist-lecture - 岡山科学技術専門学校 授業資料 -->
+                        <!-- Modal 3: 前田杯 -->
+
+                        <!-- Modal 10: 岡山科学技術専門学校 授業資料 -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'oist-lecture'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -465,8 +574,19 @@
                                                 </a>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/kagisen.png"
+                                            alt="岡山科学技術専門学校 授業資料 Screenshot">
+                                    </div>
+                                        <p class="text-blue-300 font-semibold text-sm">岡山科学技術専門学校</p>
+                                        <p class="text-zinc-400 text-xs mt-1">情報システム学科 企業連携授業</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: shioyomi - シオヨミ -->
+                        <!-- Modal 5: シオヨミ -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'shioyomi'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -533,8 +653,19 @@
                                                     <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Xserver</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/shioyomi.png"
+                                            alt="シオヨミ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: maedahai - 前田杯 -->
+                        <!-- Modal 6: Spacing Size QuickLook -->
+
+                        <!-- Modal 3: 前田杯 -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'maedahai'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -570,8 +701,18 @@
                                                 </a>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/maedahai.jpg"
+                                            alt="前田杯 Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: spacing-quicklook - Spacing Size QuickLook -->
+                        <!-- Modal 4: ずきメモ -->
+
+                        <!-- Modal 6: Spacing Size QuickLook -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'spacing-quicklook'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -627,8 +768,20 @@
                                                     <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover"
+                                            src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
+                                            alt="Tailwind CSS Spacing Size QuickLook Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: fontsize-quicklook - Font Size QuickLook -->
+                        <!-- Modal 7: Font Size QuickLook -->
+
+                        <!-- Modal 7: Font Size QuickLook -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'fontsize-quicklook'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -685,8 +838,20 @@
                                                     <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover"
+                                            src="./assets/images/works/Tailwind CSS Font Size QuickLook.jpg"
+                                            alt="Tailwind CSS Font Size QuickLook Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- Modal: youtube-shopico - YouTube Channel -->
+                        <!-- Modal 8: YouTube Channel -->
+
+                        <!-- Modal 8: YouTube Channel -->
                         <div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
                             x-show="activeProject === 'youtube-shopico'" x-transition.opacity.duration.300ms>
                             <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
@@ -744,6 +909,15 @@
                                                     <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">動画編集/デザイン</span>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                                        <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/youtube.png"
+                                            alt="高嶺のしょぴこさん♪ Screenshot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
