@@ -1,0 +1,79 @@
+<!-- Modal: ずきメモ -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'zukimemo'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'zukimemo'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    頭痛管理Webアプリ「ずきメモ」
+                </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">「痛すぎて滅、治したくて記録。」</p>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                        href="https://zukimemo.sho-tsukamoto.jp" target="_blank" rel="noopener">
+                        🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                    <p>
+                        既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact
+                        Nativeへの移行を視野に入れた設計）。
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>バグゼロの追求とUXの両立:</strong>
+                                頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。
+                            </li>
+                            <li><strong>実用的な共有機能:</strong>
+                                ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>Inertia.jsによるモダンモノリス:</strong>
+                                APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。
+                            </li>
+                            <li><strong>厳格なDBリレーション設計:</strong>
+                                <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。
+                            </li>
+                            <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation
+                                APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP 8.4</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Laravel 12</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">React</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Inertia.js</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">shadcn/ui</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">MySQL</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/zukimemo.png"
+                    alt="ずきメモ Screenshot">
+            </div>
+        </div>
+    </div>
+</div>

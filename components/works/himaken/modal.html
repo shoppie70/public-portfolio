@@ -1,0 +1,45 @@
+<!-- Modal: ひまわり建宅 -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'himaken'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'himaken'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    有限会社ひまわり建宅 公式サイト
+                </h3>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                        href="https://himaken.co.jp/" target="_blank" rel="noopener">
+                        🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                    <p>
+                        岡山市北区の不動産会社、有限会社ひまわり建宅様のコーポレートサイト。副業案件として、お客様との打ち合わせ、要件定義、データベース設計、フロントエンド＆バックエンド実装まで一気通貫で対応しました。
+                    </p>
+                    <p>
+                        WordPressのモダンなテーマ開発ツールであるを使用し、MVC設計に基づいた綺麗なテンプレート構築を実現。
+                    </p>
+                    <p>
+                        Viewの実装にはTailwind CSSを使用し、高速かつ将来の仕様変更にも柔軟に対応できるマークアップを行っています。
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/himaken.jpg"
+                    alt="ひまわり建宅 Screenshot">
+            </div>
+        </div>
+    </div>
+</div>

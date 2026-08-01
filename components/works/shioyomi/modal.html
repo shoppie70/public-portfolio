@@ -1,0 +1,76 @@
+<!-- Modal: シオヨミ -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'shioyomi'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'shioyomi'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    潮見表ツール「シオヨミ」
+                </h3>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                        href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank"
+                        rel="noopener">
+                        🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                    <p>
+                        自身がよく行く兵庫・鳥取・島根・岡山・香川などの主要な港（20箇所）の『潮汐・天気・風速』を、複数サイトを行き来することなく1画面で瞬時に把握するために開発した釣行計画立案ツール。
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>釣果に直結するデータの統合可視化:</strong>
+                                24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong>
+                                あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を
+                                <code>Requests</code> / <code>Services</code> /
+                                <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。
+                            </li>
+                            <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code>
+                                から潮汐データを、<code>Open-Meteo</code>
+                                から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
+                            <li><strong>ポータブルな開発環境:</strong> Apache + PHP
+                                8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP 8.0</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Composer</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">nesbot/carbon</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Chart.js 2.7</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Xserver</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/shioyomi.png"
+                    alt="シオヨミ Screenshot">
+            </div>
+        </div>
+    </div>
+</div>

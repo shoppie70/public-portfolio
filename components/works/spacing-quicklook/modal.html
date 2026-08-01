@@ -1,0 +1,66 @@
+<!-- Modal: Tailwind CSS Spacing Size QuickLook -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'spacing-quicklook'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'spacing-quicklook'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    Tailwind CSS Spacing Size QuickLook
+                </h3>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                        href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln"
+                        target="_blank" rel="noopener">
+                        🔗 Chrome ウェブストア <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                    <p>
+                        Tailwind CSSで使えるピクセルサイズを早見して、クリップボードにコピーすることが可能です。
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>開発時の脳内変換コストの削減:</strong>
+                                実務におけるコーディング時、<code>mb-64</code>
+                                等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>超軽量・ノーライブラリ実装:</strong>
+                                ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla
+                                JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">JavaScript (Vanilla JS)</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Chrome Extensions API</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover"
+                    src="./assets/images/works/Tailwind CSS Spacing QuickLook.jpg"
+                    alt="Tailwind CSS Spacing Size QuickLook Screenshot">
+            </div>
+        </div>
+    </div>
+</div>

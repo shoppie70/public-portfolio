@@ -1,0 +1,76 @@
+<!-- Modal: ほいサーチ -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'hoi-search'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900/85 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'hoi-search'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    広島市保活支援検索ツール「ほいサーチ」
+                </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「自治体の複雑な公開情報を、ユーザー目線で徹底的に構造化」</p>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
+                        href="https://hoi-search.pages.dev/hiroshima/naka/" target="_blank"
+                        rel="noopener">
+                        🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-base text-zinc-300 space-y-5 leading-loose">
+                    <p>
+                        広島市の自治体公式データを活用し、スマートフォンでの閲覧ストレス解消と、保護者が本当に必要とする条件による高速絞り込みに特化させた保活支援Webアプリケーション。
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>モバイル最適化と視認性改善:</strong>
+                                自治体公式の複雑な一覧表や大容量PDFが持つ「スマートフォンからでは著しく読みづらい」というペインを、レスポンシブなUI設計により根本から解消。
+                            </li>
+                            <li><strong>保護者ファーストのこだわり絞り込み:</strong>
+                                「おむつの園内処分可能か」「布団の持ち込み不要か」「駐車場の有無」など、従来の公開情報では埋もれがちだった保護者のコアな判断基準を1タップでサクサクフィルタリングできる検索ロジックを実装。
+                            </li>
+                            <li><strong>直感的な基本・延長保育時間の可視化:</strong>
+                                各施設の預かり時間をグラフィカルなタイムライン形式に落とし込み、複数施設の比較検討を直感的に行えるUXを追求。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">技術的工夫・データの透明性:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>公式ソースとの透過的連携:</strong>
+                                非公式ツールでありながら情報の正確性と信頼性を担保するため、元データである広島市公式のデータソースURLへダイレクトに遷移・確認できる透過的なリンク設計。
+                            </li>
+                            <li><strong>エッジホスティングによる超高速配信:</strong> インフラにCloudflare
+                                Pagesを採用。地域ごとに最適化されたデータを高速配信し、子育て中の慌しい時間でも一切の待ち時間を感じさせない高速なページ表示速度を実現。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">HTML5 / CSS3</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">JavaScript</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Cloudflare Pages</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Open Data Utilization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/hoi_top.png"
+                    alt="ほいサーチ スクリーンショット">
+            </div>
+        </div>
+    </div>
+</div>
