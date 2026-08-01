@@ -18,6 +18,8 @@
                 <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                     Tailwind CSS Spacing Size QuickLook
                 </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「Tailwind CSSの余白クラスを即座に参照・コピー。デザインと実装の共通言語化を支えるChrome拡張機能」</p>
                 <div class="mb-4">
                     <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
                         href="https://chromewebstore.google.com/detail/tailwind-css-spacing-size/ljlbegoippmblalbmmehdefachnhilln"
@@ -27,23 +29,17 @@
                 </div>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        Tailwind CSSで使えるピクセルサイズを早見して、クリップボードにコピーすることが可能です。
+                        転職先でTailwind CSSをチームに浸透させる際、フォントサイズに続き「余白クラス（<code>p-4</code> や <code>m-6</code> 等）と具体的なピクセル数値の相互変換」も開発スピードを左右する課題でした。その脳内変換オーバーヘッドをゼロにし、チーム全員がスムーズに実装できるよう開発したChrome拡張機能シリーズの第2弾です。
+                    </p>
+                    <p>
+                        <strong>【組織への影響・開発効率の向上】</strong><br>
+                        余白数値（px / rem）の即座な参照に加え、クラス名のワンクリックコピー機能を搭載。エンジニアチーム内のコーディングスピード向上と、デザイナーとの余白指定におけるコミュニケーションコスト大幅削減に貢献しました。
                     </p>
                     <div>
-                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <h5 class="font-bold text-white mb-1">主な機能:</h5>
                         <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>開発時の脳内変換コストの削減:</strong>
-                                実務におけるコーディング時、<code>mb-64</code>
-                                等の指定が具体的に何ピクセルなのか、またはデザインカンプのピクセル値をどのTailwindクラスに落とし込むべきかという『脳内変換オーバーヘッド』をゼロにするために開発。
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>超軽量・ノーライブラリ実装:</strong>
-                                ユーザーが閲覧するあらゆるWebページやデベロッパー・ツールのパフォーマンスを阻害しないよう、外部依存ライブラリを一切排除したVanilla
-                                JSのみで実装。DOM解析とクラスマッチングを最適化し、超低レイテンシでのポップアップ・コピー体験を実現。</li>
+                            <li><strong>一瞬で余白数値を参照＆コピー:</strong> ツールバーのポップアップからワンクリックで余白クラス・rem値・px換算値を表示し、即座にクリップボードへコピー可能。</li>
+                            <li><strong>超軽量ノーライブラリ実装:</strong> 外部依存を一切排除したVanilla JSのみで構成し、ブラウザのパフォーマンスを害さない快適な動作環境を実現。</li>
                         </ul>
                     </div>
                     <div class="pt-4 border-t border-zinc-800">

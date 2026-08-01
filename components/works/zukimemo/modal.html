@@ -18,7 +18,8 @@
                 <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                     頭痛管理Webアプリ「ずきメモ」
                 </h3>
-                <p class="text-blue-400 text-sm font-semibold mb-4 italic">「痛すぎて滅、治したくて記録。」</p>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「痛すぎて滅、治したくて記録。頭痛持ちエンジニアが自分のために作った完全無料ダイアリー」</p>
                 <div class="mb-4">
                     <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
                         href="https://zukimemo.sho-tsukamoto.jp" target="_blank" rel="noopener">
@@ -27,44 +28,35 @@
                 </div>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        既存の頭痛記録アプリに存在する「服薬ログの紐付けバグ」や「データエクスポートの有料制限」といった実用上のペインを根本から解消するために開発した、モダンモノリス構成のモバイルファーストWebアプリケーション（将来的なReact
-                        Nativeへの移行を視野に入れた設計）。
+                        <strong>【開発背景・ユーザーの課題解消】</strong><br>
+                        「頭が割れそうな時に複雑な操作をさせないでほしい。医師に見せる体調データ出力にお金を取らないでほしい。」
+                        いち頭痛持ちとしての切実な不満から開発した頭痛管理アプリ。既存アプリの「服薬データの紐付け表示バグ」や「PDFエクスポートの有料制限」を根本から解消し、痛い時でも1〜2タップで記録が完了する完全無料のツールを自律開発しました。
                     </p>
                     <div>
-                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <h5 class="font-bold text-white mb-1">主な特徴・家族を支えるプロダクト価値:</h5>
                         <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>バグゼロの追求とUXの両立:</strong>
-                                頭痛発生時の認知負荷を下げるため、1〜2タップで『同時に服用した薬・量・時刻』を直感的に記録できるワンモーダルUIを構築。
+                            <li><strong>ファミリーリンク（パートナー共有機能）:</strong>
+                                パートナーのアカウントと紐付けることで、互いの体調や服薬状況をリアルタイム共有。夫婦間での体調可視化により、シフト制での乳児の育児・お世話の連携プレイをシステム面から強固にサポート。
                             </li>
-                            <li><strong>実用的な共有機能:</strong>
-                                ファミリーリンク（パートナー共有）機能を標準搭載。夫婦間での体調可視化・共有を自動化し、シフト制での乳児の育児・お世話における連携プレイをシステム面から強固にサポート。
+                            <li><strong>気圧自動連動＆医師提示用PDFエクスポート:</strong>
+                                Geolocation APIと気象情報APIを連携させ、記録時の「気圧(hPa)・天気・気温」を自動補完。受診時にそのまま医師へ手渡せるA4サイズの診察用PDFレポートやCSVデータを完全無料で出力可能です。
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>Inertia.jsによるモダンモノリス:</strong>
-                                APIのエンドポイント開発や二重ルーティングを完全に排し、LaravelコントローラーからReactコンポーネントへ直接Propsでデータを流し込むSPA構成を採用。開発スピードとシームレスなUXを極限まで両立。
-                            </li>
-                            <li><strong>厳格なDBリレーション設計:</strong>
-                                <code>headache_logs</code>（頭痛）と<code>medication_logs</code>（服薬）をDBレベルで明確に分離。1対多のリレーションを定義し、予防薬の単独服薬にも対応しつつ、紐付け表示バグを構造的に排除。
-                            </li>
-                            <li><strong>外部API連携によるデータ自動補完:</strong> フロントのGeolocation
-                                APIで取得した緯度経度ベースに、気象情報APIへ非同期リクエスト。その時点の天気・気圧・気温を自動補完し、PDFレポート出力や気圧相関グラフを完全無料で出力可能。
-                            </li>
-                        </ul>
-                    </div>
+                    <p>
+                        <strong>【技術スタック＆アーキテクチャ】</strong><br>
+                        <strong>Laravel 12 + Inertia.js + React + Tailwind CSS + shadcn/ui</strong> によるモダンモノリス構成（PWA対応）。<code>headache_logs</code> と <code>medication_logs</code> をDBレベルで厳格に分離することで表示バグを構造的に排除し、将来のReact Native（iOS/Android）アプリ化も見据えた拡張性の高い設計を採用しています。
+                    </p>
                     <div class="pt-4 border-t border-zinc-800">
                         <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
                         <div class="flex flex-wrap gap-2 mt-2">
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP 8.4</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Laravel 12</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">React</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">React 19</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Inertia.js</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">shadcn/ui</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">MySQL</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Geolocation / Weather API</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker</span>
                         </div>
                     </div>

@@ -19,7 +19,7 @@
                     広島市保活支援検索ツール「ほいサーチ」
                 </h3>
                 <p class="text-blue-400 text-sm font-semibold mb-4 italic">
-                    「自治体の複雑な公開情報を、ユーザー目線で徹底的に構造化」</p>
+                    「もう見づらい資料と格闘しない。希望条件でサクサク探して一括比較できる保活支援アプリ」</p>
                 <div class="mb-4">
                     <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
                         href="https://hoi-search.pages.dev/hiroshima/naka/" target="_blank"
@@ -29,40 +29,30 @@
                 </div>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        広島市の自治体公式データを活用し、スマートフォンでの閲覧ストレス解消と、保護者が本当に必要とする条件による高速絞り込みに特化させた保活支援Webアプリケーション。
+                        保育園選び（保活）における「自治体HPに情報が散らばっている」「PDFの入園案内や持ち物リストがスマートフォンから読みづらい」という保護者の悩みを解決する地域特化型検索・比較アプリ。奥様やご友人からも大好評を得ている実用性の高いツールです。
                     </p>
                     <div>
-                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <h5 class="font-bold text-white mb-1">主な特徴・工夫:</h5>
                         <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>モバイル最適化と視認性改善:</strong>
-                                自治体公式の複雑な一覧表や大容量PDFが持つ「スマートフォンからでは著しく読みづらい」というペインを、レスポンシブなUI設計により根本から解消。
+                            <li><strong>保護者目線のニッチ条件＆ゼロレイテンシ検索:</strong>
+                                「おむつの園内処分」「お昼寝布団の持ち込み不要」「送迎駐車場の有無」など、保護者が本当に知りたい条件をフロントエンドのインメモリ処理により瞬時にサクサク絞り込めます。現在地周辺の園を探す位置情報検索にも対応。
                             </li>
-                            <li><strong>保護者ファーストのこだわり絞り込み:</strong>
-                                「おむつの園内処分可能か」「布団の持ち込み不要か」「駐車場の有無」など、従来の公開情報では埋もれがちだった保護者のコアな判断基準を1タップでサクサクフィルタリングできる検索ロジックを実装。
+                            <li><strong>スマートフォン完全対応のモバイルファーストUI:</strong>
+                                PC画面では2ペイン構成（左：検索一覧、右：詳細）、スマホ画面ではシームレスな画面切り替えを採用。忙しい育児の合間でも片手で快適に操作できるようUI/UXを追求しています。
                             </li>
-                            <li><strong>直感的な基本・延長保育時間の可視化:</strong>
-                                各施設の預かり時間をグラフィカルなタイムライン形式に落とし込み、複数施設の比較検討を直感的に行えるUXを追求。</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-bold text-white mb-1">技術的工夫・データの透明性:</h5>
-                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>公式ソースとの透過的連携:</strong>
-                                非公式ツールでありながら情報の正確性と信頼性を担保するため、元データである広島市公式のデータソースURLへダイレクトに遷移・確認できる透過的なリンク設計。
-                            </li>
-                            <li><strong>エッジホスティングによる超高速配信:</strong> インフラにCloudflare
-                                Pagesを採用。地域ごとに最適化されたデータを高速配信し、子育て中の慌しい時間でも一切の待ち時間を感じさせない高速なページ表示速度を実現。
+                            <li><strong>マルチ自治体対応の柔軟なアーキテクチャ:</strong>
+                                環境変数（<code>VITE_TARGET_REGION</code>）の切替のみで、広島市各区や福山市など異なる自治体のデータと設定を動的に読み込み、独立したアプリとして即座にビルド・配信できる設計を採用。
                             </li>
                         </ul>
                     </div>
                     <div class="pt-4 border-t border-zinc-800">
                         <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
                         <div class="flex flex-wrap gap-2 mt-2">
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">HTML5 / CSS3</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">JavaScript</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">React</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">TypeScript</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Vite</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Cloudflare Pages</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Open Data Utilization</span>
                         </div>
                     </div>
                 </div>

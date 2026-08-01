@@ -18,6 +18,8 @@
                 <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                     Instagram Graph API Token Generator
                 </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「必要な情報を入れるだけ。Instagram Graph APIの無期限トークンを自動取得できるWebツール」</p>
                 <div class="mb-4">
                     <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
                         href="https://instagram.salvador79.dev/" target="_blank" rel="noopener">
@@ -26,14 +28,31 @@
                 </div>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        インスタグラムの投稿をWebページに埋め込む際、Instagram Graph APIを利用してトークンを発行する必要があります。
+                        WebサイトへのInstagramフィード埋め込みに必要な「無期限アクセストークン（Token 3）」および「Instagram Business Account ID」の取得・交換プロセスを自動化するWebアプリケーション。
                     </p>
                     <p>
-                        手動でのトークン発行手順が煩雑なため、自動取得・更新ができるツールを個人で構築し、運用しています。
+                        手動では非常に煩雑な複数段階のMeta API手続きを解消すること、およびPHP（Laravel）の実装スキル向上と英語学習を目的として個人開発・運用しています。
                     </p>
-                    <p>
-                        現在、日本国内のみならず世界中の方々から毎日のように利用されており、個人開発ツールとして稼働しています。
-                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">主な特徴・技術的工夫:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>マルチステップなAPI自動連携・検証パイプライン:</strong>
+                                短期トークンから長期トークン（60日）、無期限トークンへの交換、および対応するビジネスアカウントIDの抽出までの一連のMeta Graph API通信をLaravel上で自動化。取得したトークンで実際に投稿が取得できるかの自動検証まで一括処理します。
+                            </li>
+                            <li><strong>多言語対応（i18n）と丁寧な導入UI:</strong>
+                                日本語（<code>/ja</code>）と英語の双方に対応したUIルーティングと詳細なセットアップマニュアルを完備。直感的でミニマルな設計を採用しています。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP 8.2+</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Laravel 12</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Blade</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker (Laravel Sail)</span>
+                        </div>
+                    </div>
                     <div class="pt-4 border-t border-zinc-800">
                         <p class="text-sm text-zinc-300 mb-1">GitHub Repository</p>
                         <a class="text-blue-400 hover:underline text-sm"

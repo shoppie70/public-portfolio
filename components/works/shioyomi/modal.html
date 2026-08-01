@@ -18,6 +18,8 @@
                 <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                     潮見表ツール「シオヨミ」
                 </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「複数サイトの往復をゼロに。釣行に必要な『潮・風・天気』を1画面に集約した潮汐ダッシュボード」</p>
                 <div class="mb-4">
                     <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline hover:shadow-blue-500/25"
                         href="https://static.sho-tsukamoto.jp/tidegraph/" target="_blank"
@@ -27,42 +29,34 @@
                 </div>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        自身がよく行く兵庫・鳥取・島根・岡山・香川などの主要な港（20箇所）の『潮汐・天気・風速』を、複数サイトを行き来することなく1画面で瞬時に把握するために開発した釣行計画立案ツール。
+                        <strong>【開発背景・課題解消】</strong><br>
+                        釣行計画時に「潮汐サイト」「天気予報」「風速データ」など複数のWebサイトを行き来するストレスを解消するために自作した個人開発ツール。
+                        自身がよく訪れる兵庫・鳥取・島根・岡山・香川などの主要20港のデータを1画面で即座に把握・比較できるように構築しました。
                     </p>
                     <div>
-                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <h5 class="font-bold text-white mb-1">主な機能・UXの工夫:</h5>
                         <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>釣果に直結するデータの統合可視化:</strong>
-                                24時間の潮位グラフ（Chart.js）と、風向き・風速（m/s）データを同一グラフ上に重畳表示。月間カレンダービューとも連動させ、最小限の画面遷移で釣行判断に必要な情報を集約。
+                            <li><strong>データの重畳表示と直感的な可視化:</strong>
+                                24時間の潮位グラフ（Chart.js）と風向き・風速（m/s）データを同一グラフ上に表示。月間カレンダーとも連動させ、画面遷移なしで瞬時に釣行の可否を判断できます。
+                            </li>
+                            <li><strong>マルチAPIのバックエンド並列統合:</strong>
+                                潮汐データ（<code>tide736.net</code>）と気象・风速データ（<code>Open-Meteo</code>）をバックエンドで並行取得・パースする軽量データパイプラインを実装。
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
-                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
-                            <li><strong>プレーンPHPによるレイヤードアーキテクチャ:</strong>
-                                あえてフルスタックフレームワークに依存せず、PHP 8.0単体で構築。ディレクトリ構造を
-                                <code>Requests</code> / <code>Services</code> /
-                                <code>UseCases</code> に明示的に分離し、疎結合で保守性の高いオブジェクト指向設計を自力で具現化。
-                            </li>
-                            <li><strong>マルチAPIオーケストレーション:</strong> <code>tide736.net</code>
-                                から潮汐データを、<code>Open-Meteo</code>
-                                から気象・風速データをバックエンドで並行取得し、高速にパース・統合する軽量データパイプラインを実装。</li>
-                            <li><strong>ポータブルな開発環境:</strong> Apache + PHP
-                                8.0のDockerコンテナ環境を内製し、ローカルから本番（Xserver）へのデプロイまで環境差分のない堅牢な運用を担保。
-                            </li>
-                        </ul>
-                    </div>
+                    <p>
+                        <strong>【技術的アプローチ】</strong><br>
+                        プロダクトの規模感に合わせ、あえて重いフレームワークを使わずプレーンなPHP 8.0単体で開発。<code>Requests</code> / <code>Services</code> / <code>UseCases</code> のレイヤード構造を自力で組み立て、依存関係が少なく動作が極めて軽量なコードベースを実現しています。
+                    </p>
                     <div class="pt-4 border-t border-zinc-800">
                         <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
                         <div class="flex flex-wrap gap-2 mt-2">
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP 8.0</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Composer</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">nesbot/carbon</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Chart.js 2.7</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Chart.js</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
                             <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Docker</span>
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Xserver</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Open-Meteo API</span>
                         </div>
                     </div>
                 </div>

@@ -18,13 +18,33 @@
                 <h3 class="text-2xl font-bold text-white mb-2 font-heading">
                     前田杯 釣り大会システム
                 </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">
+                    「SNSでの手動管理をWebシステム化。当日の受付管理と緊急連絡先の把握を効率化したイベント管理システム」</p>
                 <div class="text-base text-zinc-300 space-y-5 leading-loose">
                     <p>
-                        有志で企画・運営している釣り大会の公式サイトおよび応募エントリー管理システムです。
+                        有志で企画・運営する釣り大会「前田杯」の公式サイト兼エントリー管理システム。
+                        従来はLINEやTwitter（X）のDMで個別に募集を行っており、「参加者の把握が困難」「緊急連絡先の収集漏れ」「当日受付の手間」といった運用面・安全面の課題がありました。自身が運営に加わったことを機に、大会運営をスムーズにするWebシステムを個人で開発・導入しました。
                     </p>
-                    <p>
-                        バックエンドおよび応募受付のロジックはLaravelを用いて構築。管理画面からエントリーした応募者のステータス確認、名簿作成などがスムーズに行える設計にしています。
-                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">主な特徴・導入効果:</h5>
+                        <ul class="list-disc pl-4 space-y-2 text-zinc-300 text-base leading-loose">
+                            <li><strong>安全管理を意識したエントリーフォーム:</strong>
+                                野外イベントにおいて不可欠な緊急連絡先などの必須入力を担保した専用フォームを構築。事前の情報漏れを防ぎ、万が一の際にも迅速に対応できる安全管理体制を整えました。
+                            </li>
+                            <li><strong>当日の受付ステータス＆名簿の一元管理:</strong>
+                                Laravelで構築した管理画面から、エントリー者の「受付完了ステータス」や参加者名簿を一目で把握・確認できる仕組みを実装。当日の受付対応を劇的に効率化しました。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-sm text-zinc-300 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">PHP</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Laravel</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Blade Templates</span>
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-950/40 text-blue-300 border border-blue-800/50 rounded-full">Tailwind CSS</span>
+                        </div>
+                    </div>
                     <div class="pt-4 border-t border-zinc-800">
                         <p class="text-sm text-zinc-300 mb-1">GitHub Repository</p>
                         <a class="text-blue-400 hover:underline text-sm"
