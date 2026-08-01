@@ -16,10 +16,10 @@ jobs:
       - name: 🚚 最新コードの取得
         uses: actions/checkout@v7
 
-      - name: 🔧 Node.js 22.x のセットアップ
+      - name: 🔧 Node.js 24.x のセットアップ
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
           cache: 'npm'
 
       - name: 📦 依存パッケージのインストール
