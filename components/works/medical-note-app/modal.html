@@ -1,0 +1,67 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display: none;"
+    x-show="activeProject === 'medical-note-app'" x-transition.opacity.duration.300ms>
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" @click="activeProject = null"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-6 md:p-10 max-h-[90vh] overflow-y-auto text-zinc-100"
+        x-show="activeProject === 'medical-note-app'"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95">
+        <button
+            class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+            @click="activeProject = null">✕</button>
+        <div class="mt-4 space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-2 font-heading">
+                    受診メモ生成ツール
+                </h3>
+                <p class="text-blue-400 text-sm font-semibold mb-4 italic">「病院での『伝え忘れ』『聞き忘れ』をゼロにする、A4印刷対応の受診メモ作成ツール」</p>
+                <div class="mb-4">
+                    <a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-900/30 hover:no-underline"
+                        href="https://medical-note-app.pages.dev/" target="_blank" rel="noopener">
+                        🔗 サイトにアクセスする <span class="ml-2 font-mono">→</span>
+                    </a>
+                </div>
+                <div class="text-sm text-zinc-300 space-y-4 leading-relaxed">
+                    <p>
+                        短時間で行われる診察の問診で、伝えたい症状・経過・アレルギー・既往歴をあらかじめ整理し、医師や看護師にそのまま渡せる印刷用メモを1分で生成するWebアプリケーション。
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">課題解決・UXへのこだわり:</h5>
+                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                            <li><strong>1分で要点を整理:</strong> 主訴・発症時期・症状の変化・服薬状況・医師への質問などを標準的な問診フォーマットに沿って入力するだけで、医師に伝わる構成に自動整形。</li>
+                            <li><strong>A4・1枚に最適化されたプリントレイアウト:</strong> リアルタイムプレビューで仕上がりを確認しながら、ブラウザの印刷機能で用紙1枚にぴったり出力。PDF保存やスマホ画面での提示にも対応。</li>
+                            <li><strong>完全ローカル保存・安心のプライバシー:</strong> 入力された医療・健康データは外部サーバーへ一切送信されず、すべてブラウザの <code>localStorage</code> のみに安全保存。</li>
+                            <li><strong>乳幼児対応＆入力補助:</strong> 乳幼児モード（体重の <code>g</code> 表示切り替えや生後日数・月数の自動計算）やクイック入力チップなど細やかな配慮を実装。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-white mb-1">技術的工夫:</h5>
+                        <ul class="list-disc pl-4 space-y-1 text-zinc-400 text-xs">
+                            <li><strong>React 19 &amp; TypeScript 6 による堅牢な設計:</strong> 最新のReactおよびTypeScriptを採用し、フォーム状態管理とリアルタイムプレビューを型安全かつスムーズに構築。</li>
+                            <li><strong>Tailwind CSS v4 活用:</strong> 最新のTailwind CSS v4を使用したレスポンシブかつスタイリッシュなコンポーネントデザイン。</li>
+                            <li><strong>Cloudflare Pages によるエッジ配信:</strong> 静的ホスティング基盤としてCloudflare Pagesを利用し、高速かつ安定した配信を実現。</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800">
+                        <p class="text-xs text-zinc-400 mb-1">技術スタック</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="tag">React 19</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS v4</span>
+                            <span class="tag">Lucide React</span>
+                            <span class="tag">Cloudflare Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-zinc-800 max-w-2xl mx-auto">
+                <img loading="lazy" decoding="async" class="w-full object-cover" src="./assets/images/works/medical_note_app.jpg"
+                    alt="受診メモ生成ツール スクリーンショット">
+            </div>
+        </div>
+    </div>
+</div>
