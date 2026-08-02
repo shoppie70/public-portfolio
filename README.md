@@ -10,7 +10,7 @@
 - **Web**: https://sho-tsukamoto.jp
 - **GitHub**: https://github.com/shoppie70
 - **LinkedIn**: https://www.linkedin.com/in/翔-塚本-74b27925a/
-- **職務経歴書 (CV)**: https://hackmd.io/@sho-tsukamoto/CV
+- **職務経歴書 (CV)**: https://github.com/shoppie70/public-portfolio/blob/main/RESUME.md
 
 ## 概要
 
